@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wealth Vault - Asset Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#ffdad6",
+                    "on-surface": "#e0e2e6",
+                    "inverse-surface": "#e0e2e6",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "primary": "#bac7df",
+                    "on-primary-container": "#78849b",
+                    "inverse-primary": "#525f74",
+                    "secondary-fixed-dim": "#e9c176",
+                    "on-primary": "#243144",
+                    "inverse-on-surface": "#2d3134",
+                    "on-tertiary": "#313030",
+                    "surface-container-lowest": "#0b0f11",
+                    "tertiary": "#c8c6c5",
+                    "tertiary-container": "#1c1c1c",
+                    "surface": "#101417",
+                    "on-background": "#e0e2e6",
+                    "secondary-fixed": "#ffdea5",
+                    "surface-container": "#1d2023",
+                    "on-primary-fixed": "#0f1c2e",
+                    "surface-container-high": "#272a2d",
+                    "on-secondary": "#412d00",
+                    "surface-container-low": "#191c1f",
+                    "secondary-container": "#604403",
+                    "primary-fixed-dim": "#bac7df",
+                    "surface-tint": "#bac7df",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "surface-bright": "#363a3d",
+                    "surface-variant": "#323538",
+                    "surface-container-highest": "#323538",
+                    "primary-fixed": "#d6e3fc",
+                    "on-tertiary-container": "#858484",
+                    "outline-variant": "#44474c",
+                    "surface-dim": "#101417",
+                    "on-primary-fixed-variant": "#3b475b",
+                    "outline": "#8f9097",
+                    "on-surface-variant": "#c5c6cd",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "background": "#101417",
+                    "on-secondary-fixed": "#261900",
+                    "on-secondary-container": "#dab36a",
+                    "primary-container": "#0f1c2e",
+                    "error": "#ffb4ab",
+                    "secondary": "#e9c176",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#e5e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "unit": "4px",
+                    "sm": "8px",
+                    "gutter": "24px",
+                    "margin": "32px",
+                    "lg": "24px",
+                    "xl": "40px",
+                    "max_width": "1440px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "manrope"
+                    ],
+                    "body-md": [
+                            "inter"
+                    ],
+                    "body-lg": [
+                            "inter"
+                    ],
+                    "data-mono": [
+                            "inter"
+                    ],
+                    "label-sm": [
+                            "inter"
+                    ],
+                    "display-xl": [
+                            "manrope"
+                    ],
+                    "headline-lg": [
+                            "manrope"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "letterSpacing": "0em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "letterSpacing": "0em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "0em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "data-mono": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-xl": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          },
+        }
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex selection:bg-secondary/30 selection:text-secondary">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen py-8 bg-[#0F1C2E] border-r border-white/10 w-64 fixed left-0 top-0 z-40">
+<div class="px-6 mb-12">
+<h1 class="text-[#C5A059] font-black uppercase tracking-tighter text-xl">ASSET CONTROL</h1>
+<p class="font-['Manrope'] text-sm font-medium text-slate-500 mt-1">Institutional Grade</p>
+</div>
+<ul class="flex flex-col gap-2 px-4 flex-1">
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-[#C5A059]/10 text-[#C5A059] border-r-4 border-[#C5A059] hover:bg-white/5 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-['Manrope'] text-sm font-medium">Portfolio</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-['Manrope'] text-sm font-medium">Markets</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-['Manrope'] text-sm font-medium">Vaults</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-['Manrope'] text-sm font-medium">Analytics</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-['Manrope'] text-sm font-medium">Support</span>
+</a>
+</li>
+</ul>
+<div class="px-4 mt-auto">
+<button class="w-full py-3 px-4 bg-[#C5A059] text-[#0F1C2E] font-label-sm rounded-DEFAULT hover:shadow-[0_4_20px_rgba(197,160,89,0.15)] transition-all duration-300">
+                New Transaction
+            </button>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<main class="flex-1 md:ml-64 relative min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-16 px-6 fixed top-0 w-full md:w-[calc(100%-16rem)] z-50 border-b border-white/10 bg-[#0F1C2E]/80 backdrop-blur-xl shadow-[0_4_20px_rgba(197,160,89,0.15)]">
+<div class="flex items-center md:hidden">
+<span class="text-xl font-bold tracking-widest text-[#C5A059]">VAULT PREMIER</span>
+</div>
+<!-- Mobile Menu Button (Placeholder) -->
+<button class="md:hidden text-slate-400">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Desktop Search & Actions -->
+<div class="hidden md:flex flex-1 items-center justify-between">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full bg-[#1C1C1C] border-none border-b-2 border-transparent focus:border-[#C5A059] focus:ring-0 rounded-t-DEFAULT pl-10 py-2 text-data-mono font-data-mono text-on-surface placeholder:text-slate-500 transition-colors" placeholder="Search assets..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:text-white transition-colors hover:bg-white/5 rounded-full p-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-weight="fill">notifications</span>
+</button>
+<button class="text-slate-400 hover:text-white transition-colors hover:bg-white/5 rounded-full p-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-weight="fill">settings</span>
+</button>
+</div>
+<div class="h-8 w-px bg-white/10"></div>
+<div class="flex items-center gap-3 cursor-pointer hover:bg-white/5 p-2 rounded-lg transition-all duration-300">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#C5A059]">
+<img alt="User profile with gold border" class="w-full h-full object-cover" data-alt="A professional headshot of a mature individual in a dark tailored suit, set against a deep navy background. The lighting is dramatic and studio-quality, highlighting the subject's confident expression. The overall aesthetic is wealthy, secure, and corporate, fitting for a high-end financial dashboard avatar. The image has a subtle gold tonal grade to match the UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANmKej6xafR5PRYaRO_Zk1VXEHEXd7i457LUOM6tRA3HuHaLKKCNz_ITrvHFgTIRUw1e-clPbCMHb_aFP_GKAHBQFfmb4IykVn9ra1ODXBxI8_ypZO9WfnyWuZgXJn3IogRn3cuWOLapohBDDM0bGrdOz286GPy0QusRD2cILWC8NwqhNm0cgnIawrJOPkmf3A9VqY1Wdav6XoDUsFmtLFK5qz6cxD3EZkTFMinqd31YbnxWAlQFYWfHH8uZ5ls5IklUm_fDO5W066"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="flex-1 mt-16 p-6 lg:p-10 pb-24 overflow-y-auto">
+<!-- Wealth Header -->
+<div class="mb-xl flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface-variant mb-2">Total Portfolio Value</h2>
+<div class="font-display-xl text-display-xl text-on-surface flex items-baseline gap-4">
+                        $12,458,900.00
+                        <span class="font-data-mono text-data-mono text-emerald-400 flex items-center bg-emerald-400/10 px-2 py-1 rounded-DEFAULT">
+<span class="material-symbols-outlined text-[16px] mr-1">trending_up</span>
+                            +2.4%
+                        </span>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 border border-[#C5A059] text-[#C5A059] font-label-sm rounded-DEFAULT hover:bg-[#C5A059]/10 transition-colors duration-300">
+                        Generate Report
+                    </button>
+<button class="px-6 py-2 bg-[#C5A059] text-[#0F1C2E] font-label-sm rounded-DEFAULT hover:shadow-[0_4_20px_rgba(197,160,89,0.15)] transition-all duration-300">
+                        Add Funds
+                    </button>
+</div>
+</div>
+<!-- Top Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-xl">
+<!-- Card 1 -->
+<div class="bg-tertiary-container rounded-lg p-lg border border-white/10 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-[#C5A059]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="font-body-md text-body-md text-on-surface-variant">Liquid Assets</span>
+<span class="material-symbols-outlined text-[#C5A059]">account_balance</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-2">$4,200,000</div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-data-mono text-on-surface-variant">Checking &amp; Savings</span>
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-tertiary-container rounded-lg p-lg border border-white/10 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-[#C5A059]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="font-body-md text-body-md text-on-surface-variant">Investment Value</span>
+<span class="material-symbols-outlined text-[#C5A059]">trending_up</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-2">$7,850,400</div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-data-mono text-on-surface-variant">Equities &amp; Bonds</span>
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-tertiary-container rounded-lg p-lg border border-white/10 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-[#C5A059]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="font-body-md text-body-md text-on-surface-variant">Alternative Assets</span>
+<span class="material-symbols-outlined text-[#C5A059]">diamond</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-2">$408,500</div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-data-mono text-on-surface-variant">Real Estate &amp; Crypto</span>
+<span class="w-2 h-2 rounded-full bg-[#C5A059]"></span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout for Main Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Performance Graph (Span 2) -->
+<div class="lg:col-span-2 bg-tertiary-container rounded-lg p-lg border border-white/10 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Performance History</h3>
+<div class="flex gap-2 bg-surface-container rounded-DEFAULT p-1">
+<button class="px-3 py-1 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface rounded-sm transition-colors">1M</button>
+<button class="px-3 py-1 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface rounded-sm transition-colors">3M</button>
+<button class="px-3 py-1 font-label-sm text-label-sm text-on-primary bg-primary rounded-sm transition-colors shadow-sm">1Y</button>
+<button class="px-3 py-1 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface rounded-sm transition-colors">ALL</button>
+</div>
+</div>
+<!-- Graph Placeholder (CSS Styled to look like a chart) -->
+<div class="flex-1 relative min-h-[300px] border-b border-l border-white/10 pt-4 pr-4">
+<!-- Y-Axis Labels -->
+<div class="absolute left-[-40px] top-0 bottom-0 flex flex-col justify-between font-data-mono text-data-mono text-on-surface-variant text-right w-8">
+<span>15M</span>
+<span>12M</span>
+<span>9M</span>
+<span>6M</span>
+</div>
+<!-- Grid Lines -->
+<div class="absolute inset-0 pt-4 pr-4 flex flex-col justify-between">
+<div class="w-full h-px bg-white/5"></div>
+<div class="w-full h-px bg-white/5"></div>
+<div class="w-full h-px bg-white/5"></div>
+<div class="w-full h-px bg-white/5"></div>
+</div>
+<!-- The Line (SVG representation) -->
+<svg class="absolute inset-0 w-full h-full pt-4 pr-4 overflow-visible" preserveaspectratio="none" viewbox="0 0 100 100">
+<!-- Gradient for line -->
+<defs>
+<lineargradient id="lineGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#0F1C2E"></stop>
+<stop offset="50%" stop-color="#bac7df"></stop>
+<stop offset="100%" stop-color="#C5A059"></stop>
+</lineargradient>
+<lineargradient id="areaGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#C5A059" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#C5A059" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Area under line -->
+<path d="M0,80 Q20,70 40,50 T70,30 T100,10 L100,100 L0,100 Z" fill="url(#areaGrad)"></path>
+<!-- The line itself -->
+<path d="M0,80 Q20,70 40,50 T70,30 T100,10" fill="none" stroke="url(#lineGrad)" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<!-- Glowing dot at end -->
+<circle class="shadow-[0_0_10px_rgba(197,160,89,1)]" cx="100" cy="10" fill="#C5A059" r="3"></circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="absolute -bottom-8 left-0 right-0 flex justify-between font-data-mono text-data-mono text-on-surface-variant pr-4">
+<span>Jan</span>
+<span>Apr</span>
+<span>Jul</span>
+<span>Oct</span>
+<span>Dec</span>
+</div>
+</div>
+</div>
+<!-- Asset Allocation (Span 1) -->
+<div class="bg-tertiary-container rounded-lg p-lg border border-white/10 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Asset Allocation</h3>
+<span class="material-symbols-outlined text-on-surface-variant">more_horiz</span>
+</div>
+<!-- Doughnut Chart Placeholder -->
+<div class="relative w-48 h-48 mx-auto my-4 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background ring -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#1d2023" stroke-width="12"></circle>
+<!-- Segment 1: Equities (60%) -->
+<circle class="transition-all duration-1000" cx="50" cy="50" fill="transparent" r="40" stroke="#C5A059" stroke-dasharray="251.2" stroke-dashoffset="100.48" stroke-width="12"></circle>
+<!-- Segment 2: Bonds (25%) -->
+<circle class="transition-all duration-1000" cx="50" cy="50" fill="transparent" r="40" stroke="#bac7df" stroke-dasharray="251.2" stroke-dashoffset="188.4" stroke-width="12" style="stroke-dashoffset: 251.2; stroke-dasharray: 62.8 251.2;" transform="rotate(216 50 50)"></circle>
+<!-- Segment 3: Cash (15%) -->
+<circle class="transition-all duration-1000" cx="50" cy="50" fill="transparent" r="40" stroke="#525f74" stroke-dasharray="251.2" stroke-dashoffset="213.52" stroke-width="12" style="stroke-dashoffset: 251.2; stroke-dasharray: 37.68 251.2;" transform="rotate(306 50 50)"></circle>
+</svg>
+<!-- Center text -->
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-md text-headline-md text-on-surface">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Classes</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="mt-auto space-y-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#C5A059]"></span>
+<span class="font-body-md text-body-md text-on-surface">Equities</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">60%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-body-md text-body-md text-on-surface">Bonds</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">25%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-inverse-primary"></span>
+<span class="font-body-md text-body-md text-on-surface">Cash/Equiv</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">15%</span>
+</div>
+</div>
+</div>
+<!-- Recent Transactions (Span Full width below) -->
+<div class="lg:col-span-3 bg-tertiary-container rounded-lg border border-white/10 overflow-hidden">
+<div class="p-lg flex justify-between items-center border-b border-white/5">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Activity</h3>
+<a class="font-label-sm text-label-sm text-[#C5A059] hover:underline" href="#">View All</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container/50 border-b border-white/5">
+<th class="p-4 font-label-sm text-label-sm text-on-surface-variant font-normal">Transaction ID</th>
+<th class="p-4 font-label-sm text-label-sm text-on-surface-variant font-normal">Date</th>
+<th class="p-4 font-label-sm text-label-sm text-on-surface-variant font-normal">Description</th>
+<th class="p-4 font-label-sm text-label-sm text-on-surface-variant font-normal">Amount</th>
+<th class="p-4 font-label-sm text-label-sm text-on-surface-variant font-normal">Status</th>
+</tr>
+</thead>
+<tbody class="font-data-mono text-data-mono">
+<tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+<td class="p-4 text-on-surface">TXN-8924A</td>
+<td class="p-4 text-on-surface-variant">Oct 24, 2023</td>
+<td class="p-4 text-on-surface">Dividend Credit - VOO</td>
+<td class="p-4 text-emerald-400">+$4,250.00</td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-sm bg-emerald-400/10 border border-emerald-400/20">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="text-emerald-400 font-label-sm text-label-sm">Cleared</span>
+</div>
+</td>
+</tr>
+<tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+<td class="p-4 text-on-surface">TXN-8923B</td>
+<td class="p-4 text-on-surface-variant">Oct 22, 2023</td>
+<td class="p-4 text-on-surface">Wire Transfer Out</td>
+<td class="p-4 text-on-surface">-$15,000.00</td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-sm bg-secondary/10 border border-secondary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-secondary font-label-sm text-label-sm">Pending</span>
+</div>
+</td>
+</tr>
+<tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+<td class="p-4 text-on-surface">TXN-8922C</td>
+<td class="p-4 text-on-surface-variant">Oct 18, 2023</td>
+<td class="p-4 text-on-surface">Purchase - AAPL (500 Shares)</td>
+<td class="p-4 text-on-surface">-$86,500.00</td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-sm bg-emerald-400/10 border border-emerald-400/20">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="text-emerald-400 font-label-sm text-label-sm">Cleared</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="p-4 text-on-surface">TXN-8921D</td>
+<td class="p-4 text-on-surface-variant">Oct 15, 2023</td>
+<td class="p-4 text-on-surface">Management Fee - Q3</td>
+<td class="p-4 text-on-surface">-$1,250.00</td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-sm bg-emerald-400/10 border border-emerald-400/20">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="text-emerald-400 font-label-sm text-label-sm">Cleared</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Progress &amp; Statistics - Serene</title>
+<!-- Google Fonts: Plus Jakarta Sans & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e1e3e2",
+                        "on-secondary-fixed-variant": "#404850",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#002118",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#404945",
+                        "on-background": "#191c1c",
+                        "tertiary": "#6b5b53",
+                        "secondary-fixed": "#dbe3ed",
+                        "surface-container": "#eceeed",
+                        "surface-bright": "#f8faf9",
+                        "surface-variant": "#e1e3e2",
+                        "surface-tint": "#3a6758",
+                        "tertiary-fixed-dim": "#d7c2b9",
+                        "surface-container-high": "#e6e9e8",
+                        "secondary-container": "#dbe3ed",
+                        "on-secondary-container": "#5d656e",
+                        "primary": "#3a6758",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#63544c",
+                        "on-tertiary-fixed": "#241913",
+                        "on-primary-container": "#325f51",
+                        "on-tertiary-fixed-variant": "#52443d",
+                        "on-error-container": "#93000a",
+                        "outline": "#717975",
+                        "surface-container-low": "#f2f4f3",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d8dada",
+                        "inverse-primary": "#a1d1bf",
+                        "background": "#f8faf9",
+                        "primary-container": "#a7d7c5",
+                        "outline-variant": "#c0c8c3",
+                        "on-surface": "#191c1c",
+                        "tertiary-container": "#dec9bf",
+                        "surface": "#f8faf9",
+                        "on-secondary-fixed": "#141c23",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#bfc7d1",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3131",
+                        "on-primary-fixed-variant": "#214f41",
+                        "secondary": "#575f68",
+                        "inverse-on-surface": "#eff1f0",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#bcedda",
+                        "primary-fixed-dim": "#a1d1bf",
+                        "tertiary-fixed": "#f4ded4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1.5rem",
+                        "3xl": "2rem"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h1": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar to maintain clean look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dbe3ed; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen pb-32">
+<!-- TopAppBar Shared Component -->
+<header class="flex justify-between items-center px-6 py-4 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md font-['Plus_Jakarta_Sans'] font-medium docked full-width top-0 sticky border-none shadow-[0_4px_20px_rgba(167,215,197,0.1)] dark:shadow-none">
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200 overflow-hidden rounded-full w-10 h-10 bg-surface-container-high focus:outline-none focus:ring-2 focus:ring-primary">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close-up portrait of a serene young woman with soft natural lighting, reflecting a calm and peaceful aesthetic suitable for a wellness application. The background is slightly blurred with soft pastel tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_MsUQNQImCzE7mi8nqBoYhR5smjjvGO8WJnreUkoLmswt1C4jIz_cEcLYpHh-CRe1NUXybZLZZBQM1mHDxSCJ0ema1gFZY57spSKRp74wt79igbYXzMAxWTR9QUc13KpBqVEdK0zi4fJLSV3pLEXbCqjx3GkpvimSaFZ-yx37lPYVIYQAUDN0RtV2mNh7Hj02gf3vVLFe9qn4idwCHbyvCDm0pdThXT4F8kHbYBY-nKC24Mh8CuZ0XpbPmpbTvEq3Xq1jeyzf9lyD"/>
+</button>
+<div class="text-2xl font-semibold tracking-tight text-emerald-700 dark:text-emerald-300">
+            Serene
+        </div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200 text-emerald-600 dark:text-emerald-400 focus:outline-none">
+<span class="material-symbols-outlined text-2xl" data-icon="settings">settings</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile md:px-margin-desktop pt-md pb-xl max-w-7xl mx-auto">
+<!-- Page Header -->
+<div class="mb-lg pt-base">
+<h1 class="font-h1 text-h1 text-on-surface mb-xs">Your Progress</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant opacity-80">A gentle look at your recent harmony.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Weekly Activity Chart (Spans full width on mobile, 8 cols on desktop) -->
+<section class="col-span-1 md:col-span-8 bg-surface-container-lowest rounded-3xl p-md shadow-[0_8px_40px_rgba(58,103,88,0.04)] border border-surface-container-highest/50 relative overflow-hidden flex flex-col justify-between min-h-[320px]">
+<div class="flex justify-between items-start mb-lg relative z-10">
+<div>
+<div class="flex items-center gap-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[18px]">directions_walk</span>
+<h2 class="font-label-md text-label-md uppercase tracking-wider">Activity</h2>
+</div>
+<div class="font-h2 text-h2 text-on-surface">4.2 <span class="font-body-md text-body-md text-on-surface-variant">hrs</span></div>
+</div>
+<div class="px-sm py-xs bg-primary-container text-on-primary-container rounded-full font-label-sm text-label-sm">
+                        This Week
+                    </div>
+</div>
+<!-- Abstracted Bar Chart using soft divs -->
+<div class="flex items-end justify-between h-40 gap-2 relative z-10 w-full mt-auto">
+<!-- Y-axis lines (decorative) -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="w-full h-px bg-outline-variant"></div>
+<div class="w-full h-px bg-outline-variant"></div>
+<div class="w-full h-px bg-outline-variant"></div>
+</div>
+<!-- Bars -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-surface-container-high rounded-t-xl h-[30%] transition-all duration-500 group-hover:bg-primary-container"></div>
+<span class="font-label-sm text-label-sm text-outline">M</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-surface-container-high rounded-t-xl h-[45%] transition-all duration-500 group-hover:bg-primary-container"></div>
+<span class="font-label-sm text-label-sm text-outline">T</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-surface-container-high rounded-t-xl h-[60%] transition-all duration-500 group-hover:bg-primary-container"></div>
+<span class="font-label-sm text-label-sm text-outline">W</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-primary rounded-t-xl h-[85%] relative shadow-[0_0_15px_rgba(58,103,88,0.2)]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface rounded-md px-2 py-1 font-label-sm text-label-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Peak day</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">T</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-surface-container-high rounded-t-xl h-[50%] transition-all duration-500 group-hover:bg-primary-container"></div>
+<span class="font-label-sm text-label-sm text-outline">F</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-surface-container-high rounded-t-xl h-[70%] transition-all duration-500 group-hover:bg-primary-container"></div>
+<span class="font-label-sm text-label-sm text-outline">S</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-surface-container-high rounded-t-xl h-[40%] transition-all duration-500 group-hover:bg-primary-container"></div>
+<span class="font-label-sm text-label-sm text-outline">S</span>
+</div>
+</div>
+<!-- Soft background glow -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-container opacity-20 rounded-full blur-3xl pointer-events-none"></div>
+</section>
+<!-- Mindfulness Focus Card (Spans 4 cols on desktop) -->
+<section class="col-span-1 md:col-span-4 bg-tertiary-container/30 rounded-3xl p-md shadow-[0_8px_30px_rgba(107,91,83,0.03)] border border-tertiary-container/50 flex flex-col justify-between min-h-[320px]">
+<div class="flex items-center gap-xs text-on-tertiary-container mb-4">
+<span class="material-symbols-outlined text-[18px]">self_improvement</span>
+<h2 class="font-label-md text-label-md uppercase tracking-wider">Mindfulness</h2>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center relative">
+<!-- Circular progress abstraction -->
+<div class="w-40 h-40 rounded-full border-[8px] border-surface-container-highest relative flex items-center justify-center">
+<!-- Simulated progress arc -->
+<svg class="absolute inset-0 w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle class="text-tertiary" cx="50" cy="50" fill="none" r="46" stroke="currentColor" stroke-dasharray="289" stroke-dashoffset="70" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="text-center">
+<div class="font-h1 text-h1 text-on-tertiary-container leading-none">120</div>
+<div class="font-label-sm text-label-sm text-tertiary mt-1">min</div>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-center text-on-surface-variant mt-4">You've found peace 5 times this week.</p>
+</section>
+<!-- Sleep Patterns (Spans 6 cols) -->
+<section class="col-span-1 md:col-span-6 bg-surface-container-lowest rounded-3xl p-md shadow-[0_8px_30px_rgba(58,103,88,0.04)] border border-surface-container-highest/50 min-h-[240px] flex flex-col">
+<div class="flex justify-between items-center mb-md">
+<div class="flex items-center gap-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">bedtime</span>
+<h2 class="font-label-md text-label-md uppercase tracking-wider">Restfulness</h2>
+</div>
+<span class="font-h3 text-h3 text-on-surface">7h 15m <span class="text-body-md font-body-md text-outline font-normal">avg</span></span>
+</div>
+<!-- Abstract sleep stages -->
+<div class="flex-1 flex flex-col justify-center gap-4">
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm text-outline mb-1">
+<span>Deep</span>
+<span>2h 10m</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[35%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm text-outline mb-1">
+<span>Light</span>
+<span>4h 05m</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full w-[60%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm text-outline mb-1">
+<span>REM</span>
+<span>1h 00m</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-inverse-primary h-full rounded-full w-[20%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Integrations (Spans 6 cols) -->
+<section class="col-span-1 md:col-span-6 bg-surface-bright rounded-3xl p-md flex flex-col justify-center min-h-[240px]">
+<div class="flex items-center gap-xs text-secondary mb-md">
+<span class="material-symbols-outlined text-[18px]">devices_wearables</span>
+<h2 class="font-label-md text-label-md uppercase tracking-wider">Integrations</h2>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-4 flex items-center justify-between shadow-sm border border-surface-container-highest/30 mb-sm">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-medium">Apple Health</div>
+<div class="font-label-sm text-label-sm text-outline">Last synced 10m ago</div>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-primary-container/30 rounded-full">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-label-sm text-label-sm text-primary">Connected</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-4 flex items-center justify-between shadow-sm border border-surface-container-highest/30 opacity-70">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">directions_run</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-medium">Google Fit</div>
+<div class="font-label-sm text-label-sm text-outline">Not configured</div>
+</div>
+</div>
+<button class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors">Connect</button>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar Shared Component -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-safe bg-white dark:bg-zinc-900 h-20 rounded-t-[32px] border-t border-emerald-50/50 dark:border-zinc-800 shadow-[0_-8px_30px_rgba(167,215,197,0.15)] md:hidden">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 hover:text-emerald-400 dark:hover:text-emerald-300 active:scale-90 transition-all duration-300 ease-out p-2" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+</a>
+<!-- Self Care (Inactive) -->
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 hover:text-emerald-400 dark:hover:text-emerald-300 active:scale-90 transition-all duration-300 ease-out p-2" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="self_care">self_care</span>
+</a>
+<!-- Insights (ACTIVE) -->
+<a aria-current="page" class="flex flex-col items-center justify-center relative after:content-[''] after:absolute after:-bottom-2 after:w-1 after:h-1 after:bg-emerald-500 after:rounded-full text-[10px] font-medium tracking-wide hover:text-emerald-400 dark:hover:text-emerald-300 active:scale-90 transition-all duration-300 ease-out p-2" href="#">
+<span class="material-symbols-outlined text-2xl text-emerald-500 dark:text-emerald-400" data-icon="insights" data-weight="fill" style="font-variation-settings: 'FILL' 1;">insights</span>
+</a>
+<!-- Person (Inactive) -->
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 hover:text-emerald-400 dark:hover:text-emerald-300 active:scale-90 transition-all duration-300 ease-out p-2" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+</a>
+</nav>
+</body></html>

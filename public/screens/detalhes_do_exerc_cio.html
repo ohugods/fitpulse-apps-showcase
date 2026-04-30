@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exercise Details - Explosive Squat Jumps</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#dae1ff",
+                    "surface-container-highest": "#353534",
+                    "on-secondary-fixed-variant": "#003fa4",
+                    "on-secondary": "#002b75",
+                    "on-secondary-container": "#f9f7ff",
+                    "secondary-container": "#0266ff",
+                    "secondary": "#b3c5ff",
+                    "secondary-fixed-dim": "#b3c5ff",
+                    "surface": "#131313",
+                    "on-primary": "#2c3400",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-background": "#e5e2e1",
+                    "on-secondary-fixed": "#001849",
+                    "outline": "#909378",
+                    "on-primary-fixed-variant": "#414c00",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#313030",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-tertiary-container": "#656464",
+                    "on-primary-container": "#5d6b00",
+                    "background": "#131313",
+                    "surface-container": "#201f1f",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#d2f000",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-tertiary": "#313030",
+                    "surface-variant": "#353534",
+                    "surface-dim": "#131313",
+                    "inverse-primary": "#576500",
+                    "inverse-surface": "#e5e2e1",
+                    "tertiary-container": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "tertiary": "#ffffff",
+                    "outline-variant": "#454932",
+                    "primary-fixed-dim": "#b8d300",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary-fixed": "#191e00",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-bright": "#393939",
+                    "on-surface": "#e5e2e1",
+                    "primary": "#ffffff",
+                    "surface-tint": "#b8d300",
+                    "error-container": "#93000a",
+                    "primary-container": "#d2f000",
+                    "on-surface-variant": "#c6c9ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "48px",
+                    "md": "24px",
+                    "gutter": "16px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "xl": "64px",
+                    "margin-mobile": "20px",
+                    "lg": "40px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "Space Grotesk"
+                    ],
+                    "label-bold": [
+                            "Lexend"
+                    ],
+                    "display-xl": [
+                            "Space Grotesk"
+                    ],
+                    "body-lg": [
+                            "Lexend"
+                    ],
+                    "body-md": [
+                            "Lexend"
+                    ],
+                    "stat-lg": [
+                            "Space Grotesk"
+                    ],
+                    "headline-md": [
+                            "Space Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-bold": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-xl": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "stat-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md">
+<!-- Video Player Placeholder Top Section -->
+<header class="relative w-full h-[397px] min-h-[350px] bg-surface-container-lowest">
+<!-- Cinematic Video Still Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, high-contrast, dark-mode fitness video still of an athletic individual mid-air performing an explosive squat jump. The setting is a premium, high-tech boutique gym illuminated by moody, dramatic lighting with subtle electric blue and vibrant lime green neon accents. The mood is intense, urgent, and focused, capturing peak physical performance against a deep black background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_um43Af4V_5fyXH3qwQG013d7m-V2R-iQPrmFPtMaxeqB3VxkNJP9rZMcdHi-6rjr5r1a2KUZQ-o5kuKrxn88pnaDcRP9Z9RogTw8sTZcRA6mxOsEdpcMuWo787QiYCbf59Wbbn7cN4Uxzxr3mzoIF-Q6vrJgWUs1y6_5QnCElefz7A93qLb7OfeNS6xzy5m_cay_UKYxdw2SAJI5Z0Pxp-nIxUNpfkrm4UAjQetlxAynwbj7Qjm_sZlX9ZARUpCREu3Xs_XAmSzF')"></div>
+<!-- Gradient Overlay for Contrast -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<!-- Ghost Back Button (Task-focused context) -->
+<button class="absolute top-margin-mobile left-margin-mobile w-12 h-12 rounded-full bg-surface-container-high/60 backdrop-blur-md flex items-center justify-center text-on-surface hover:text-primary-container transition-colors z-20 border border-surface-container-highest">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<!-- Large Play Action Overlay -->
+<button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-surface/40 backdrop-blur-xl border-2 border-primary-container flex items-center justify-center text-primary-container hover:bg-primary-container/20 transition-colors z-20 shadow-[0_0_30px_rgba(210,240,0,0.15)] group">
+<span class="material-symbols-outlined text-[48px] group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-10 flex-1 w-full max-w-4xl mx-auto bg-background -mt-8 rounded-t-[32px] px-margin-mobile md:px-margin-desktop pt-md pb-xl">
+<!-- Drag Handle Indicator (Mobile feel) -->
+<div class="w-12 h-1.5 bg-surface-container-high rounded-full mx-auto mb-8"></div>
+<!-- Header Information -->
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs tracking-tighter uppercase">Explosive Squat Jumps</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Lower Body Power &amp; Plyometrics</p>
+<!-- Metric Chips Row -->
+<div class="flex flex-wrap gap-sm">
+<span class="inline-flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full font-label-bold text-label-bold text-on-surface border border-surface-container-high shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-[18px]">timer</span>
+                    45s
+                </span>
+<span class="inline-flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full font-label-bold text-label-bold text-on-surface border border-surface-container-high shadow-sm">
+<span class="material-symbols-outlined text-error text-[18px]">local_fire_department</span>
+                    ~120 kcal
+                </span>
+<span class="inline-flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full font-label-bold text-label-bold text-on-surface border border-surface-container-high shadow-sm">
+<span class="material-symbols-outlined text-secondary-container text-[18px]">speed</span>
+                    High Intensity
+                </span>
+</div>
+</div>
+<!-- Primary Action Button -->
+<div class="mb-xl">
+<button class="w-full bg-primary-container text-on-primary font-label-bold text-label-bold py-4 rounded-xl flex justify-center items-center gap-3 uppercase tracking-wider hover:brightness-110 transition-all shadow-[0_0_20px_rgba(210,240,0,0.2)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                Start Exercise
+            </button>
+</div>
+<!-- Bento Grid: Anatomy & Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-xl">
+<!-- Target Muscle Diagram Card -->
+<div class="bg-surface-container-low rounded-xl p-md border-y border-r border-surface-container-high border-l-4 border-l-primary-container flex flex-col relative overflow-hidden">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 relative z-10">Target Areas</h2>
+<div class="flex flex-col sm:flex-row gap-6 items-center flex-1 relative z-10">
+<ul class="space-y-4 w-full sm:w-1/2">
+<li class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_rgba(210,240,0,0.8)]"></div>
+<span class="font-body-lg text-body-lg text-on-surface">Quadriceps</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_rgba(210,240,0,0.8)]"></div>
+<span class="font-body-lg text-body-lg text-on-surface">Glutes</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container/60"></div>
+<span class="font-body-lg text-body-lg text-on-surface-variant">Calves</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></div>
+<span class="font-body-lg text-body-lg text-on-surface-variant">Core (Stabilization)</span>
+</li>
+</ul>
+<!-- Anatomy Diagram Graphic -->
+<div class="w-full sm:w-1/2 h-48 bg-surface-container rounded-lg border border-surface-container-high flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 mix-blend-screen" data-alt="A sleek, high-tech anatomical 3D rendering of the human lower body musculature set against a deep black void. The quadriceps, glutes, and calves are vividly glowing in intense, electric lime green to denote muscle activation. The rest of the body is rendered in a subtle, translucent dark gray glassmorphism style. The aesthetic is extremely clinical, modern, and data-driven." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRB6CBPaZHhetGm82WrhH0d2EUEgZghTWMnYXXpiBNS3PS0PF3V610sWBZnt38ZxvSq0ZizPSPng70YkK--9iO6TmZ2IeTGxpK0xaWlgV5f5KD8XE932hOfvD_CBMERH9ulYT4EoL95jsy88TeCLVS3bwzycVkw2SgBu4vsp0vss6RLt4HtzjhgnZzi8y7BUCYWPdW7DAUOgfJgOtQMaPgtNjaUJdU1a8_00D-5Z6BIiV9kINC-refGL_jQSm7tIObr4UXZ1Dtd95N')"></div>
+</div>
+</div>
+<!-- Ambient Glow inside card -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+<!-- Pro Tips / Warnings Card -->
+<div class="bg-surface-container-low rounded-xl p-md border border-surface-container-high flex flex-col justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container">tips_and_updates</span>
+                        Form Focus
+                    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+                        Maintain a neutral spine throughout the movement. Do not let your knees collapse inward during the landing phase. Focus on max height over speed.
+                    </p>
+</div>
+<div class="bg-surface-container p-4 rounded-lg border border-surface-container-high/50 flex items-start gap-3">
+<span class="material-symbols-outlined text-error shrink-0 mt-0.5">warning</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Avoid if you have acute knee or lower back issues. Substitute with standard air squats if needed.</p>
+</div>
+</div>
+</div>
+<!-- Step-by-Step Instructions Timeline -->
+<section class="mb-xl">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8">Execution Sequence</h2>
+<div class="space-y-0 relative before:absolute before:inset-y-2 before:left-[27px] before:w-[2px] before:bg-surface-container-high">
+<!-- Step 1 -->
+<div class="flex gap-6 relative z-10 pb-8">
+<div class="w-14 h-14 rounded-full bg-surface-container flex-shrink-0 flex items-center justify-center border-2 border-primary-container text-primary-container font-stat-lg text-stat-lg shadow-[inset_0_0_15px_rgba(210,240,0,0.15)] relative">
+<!-- Inner glow for active step look -->
+<div class="absolute inset-0 rounded-full bg-primary-container/10 blur-sm"></div>
+<span class="relative z-10 text-[24px]">1</span>
+</div>
+<div class="pt-2">
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2">Setup &amp; Stance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Stand with feet slightly wider than shoulder-width apart. Point toes outward slightly. Keep chest tall and brace your core tight.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex gap-6 relative z-10 pb-8">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest flex-shrink-0 flex items-center justify-center border-2 border-surface-container-high text-on-surface-variant font-stat-lg text-stat-lg">
+<span class="text-[24px]">2</span>
+</div>
+<div class="pt-2">
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2">The Loading Phase</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Hinge at the hips and bend your knees to lower into a deep squat. Swing your arms back to gather momentum.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex gap-6 relative z-10 pb-8">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest flex-shrink-0 flex items-center justify-center border-2 border-surface-container-high text-on-surface-variant font-stat-lg text-stat-lg">
+<span class="text-[24px]">3</span>
+</div>
+<div class="pt-2">
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2">Explosive Launch</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Drive violently through your heels, extending hips, knees, and ankles simultaneously. Throw arms upward to maximize vertical height.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex gap-6 relative z-10">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest flex-shrink-0 flex items-center justify-center border-2 border-surface-container-high text-on-surface-variant font-stat-lg text-stat-lg">
+<span class="text-[24px]">4</span>
+</div>
+<div class="pt-2">
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2">Soft Impact</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Land on the mid-foot to balls of your feet, immediately absorbing the impact by sinking smoothly back into the next squat position.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

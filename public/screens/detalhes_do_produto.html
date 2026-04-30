@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aurora - Sculptural Lounge Chair</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#2f3131",
+                      "on-primary-fixed-variant": "#514535",
+                      "secondary": "#59605d",
+                      "inverse-on-surface": "#f1f1f1",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed": "#f3e0ca",
+                      "tertiary-fixed": "#eae0e0",
+                      "primary-fixed-dim": "#d6c4af",
+                      "tertiary-container": "#ccc3c3",
+                      "on-surface": "#1a1c1c",
+                      "surface": "#f9f9f9",
+                      "on-secondary-fixed": "#171d1b",
+                      "secondary-fixed-dim": "#c2c8c4",
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#d6c4af",
+                      "background": "#f9f9f9",
+                      "primary-container": "#d4c2ad",
+                      "outline-variant": "#cfc5ba",
+                      "outline": "#7e766d",
+                      "surface-container-low": "#f3f3f3",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#dadada",
+                      "primary": "#6a5c4b",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#565050",
+                      "on-tertiary-fixed": "#1f1a1b",
+                      "on-primary-container": "#5c4f3f",
+                      "on-tertiary-fixed-variant": "#4b4546",
+                      "on-error-container": "#93000a",
+                      "tertiary": "#635d5d",
+                      "secondary-fixed": "#dee4e0",
+                      "surface-container": "#eeeeee",
+                      "surface-bright": "#f9f9f9",
+                      "surface-variant": "#e2e2e2",
+                      "surface-tint": "#6a5c4b",
+                      "tertiary-fixed-dim": "#cdc4c4",
+                      "surface-container-high": "#e8e8e8",
+                      "secondary-container": "#dbe1dd",
+                      "on-secondary-container": "#5e6461",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#4c463e",
+                      "on-background": "#1a1c1c",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-secondary-fixed-variant": "#424845",
+                      "on-primary-fixed": "#231a0d",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-page": "64px",
+                      "container-max": "1440px",
+                      "section-gap": "120px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Manrope"
+                      ],
+                      "display-lg": [
+                              "Noto Serif"
+                      ],
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Noto Serif"
+                      ],
+                      "headline-md": [
+                              "Noto Serif"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-stone-900/70 backdrop-blur-xl border-b border-stone-200/50 dark:border-stone-800/50 shadow-[0_20px_40px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-container-max mx-auto">
+<button aria-label="Menu" class="text-stone-400 dark:text-stone-500 hover:text-amber-600 transition-colors duration-300 active:scale-95 ease-out">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<div class="font-serif text-2xl font-light tracking-[0.2em] text-stone-900 dark:text-stone-50 text-center">
+                L'ESSENCE
+            </div>
+<button aria-label="Shopping Bag" class="text-stone-400 dark:text-stone-500 hover:text-amber-600 transition-colors duration-300 active:scale-95 ease-out">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas (Navigation Shell Suppressed for Product Details) -->
+<main class="flex-grow pt-[88px] pb-32 md:pb-gutter max-w-container-max mx-auto w-full px-4 md:px-margin-page">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:mt-12">
+<!-- Immersive Product Image Gallery -->
+<div class="col-span-1 lg:col-span-7 flex flex-col gap-unit">
+<div class="w-full aspect-[4/5] bg-surface-container-high rounded-lg overflow-hidden relative group">
+<img alt="Sculptural Lounge Chair in a bright minimal room" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="A highly detailed close-up shot of a luxurious, sculptural lounge chair featuring smooth, organic curves and a soft pastel upholstery, perhaps a pale sage or blush tone. The chair is placed in a spacious, light-filled minimalist room with stark white walls and a polished concrete or light oak floor. The lighting is soft, natural, and diffused, emphasizing the high-end materials and craftsmanship of the furniture piece. The overall mood is serene, sophisticated, and quietly confident, perfectly aligning with a high-end e-commerce aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAwrbSBsd5k8Jq83TBW7EFSaC9-jSoALYW78U6Kk_a7t1Sqy5ws_sWgn40JuDAFj0zxa0SGYnnndGM2dMD9qF33S4_OxgQp1PdYixikBkwRx8zaU3ZMDtYSsirmFuJjCZcCmY-FlmztRzl48cR7ktRVDzmw6twDKiw-ptdSTqzSLps8y6mtkNW5Yvoo7yrzYbTcyU9PiGjfD9ZsU1JgyKan9s5aqVL_Kbnd2H46fSSSFs7bFgiesS23tAGr7UdDGeBDA59JOOqajcW"/>
+</div>
+<!-- Thumbnails (Grid) -->
+<div class="grid grid-cols-3 gap-unit mt-4">
+<div class="aspect-square bg-surface-container-high rounded overflow-hidden cursor-pointer opacity-100 ring-2 ring-primary">
+<img alt="Thumbnail 1" class="w-full h-full object-cover" data-alt="A detail shot of a luxurious lounge chair showing the texture of its soft pastel fabric and a subtle brushed gold accent on the leg. The lighting is soft and natural, emphasizing the premium quality of the materials in a bright, minimalist setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRLm3xuuCD3ruHEyp_0fbsg6RdWLO6Jc-7n12ULuRZaD82noW1bPtGXYZshMkBVbgfCPQTo2Bv-uBS4ERK1QCt5MsMDGWAO5f4Fc04W1RIdGwIenflxtu1WhuhXwOQvE-uJ9hYvloPQzt0wrHeGwedzB9wDwFn1LrsKqOKsIJbKtNL1_v-4GcOzLRdtN97QcOtqz8VOyX17cwn7H2gDibYrZ0ymNsfa925uKWy-T7YG4de8b3JfvvwItWNzbQ44t4ZcM4RYhN4DNZ1"/>
+</div>
+<div class="aspect-square bg-surface-container-high rounded overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition-opacity duration-300">
+<img alt="Thumbnail 2" class="w-full h-full object-cover" data-alt="A wider view of a modern living space featuring a sculptural lounge chair in pale tones. The room is flooded with natural light, creating a serene, calm atmosphere. The focus is on the elegant, organic shape of the chair against a clean, white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZFOULFyrQzdjrxw_NKXGNhjYNtb9yFVZMD-nC56G-PNROSjVyoEYW_M4aNs5YMrL4bpg4-1XwJW778Z4AT_y7DpA4CkSVAiMBjG9XO5P8ttElBZltnA9ikC20KMrlpBlt-z0d37n0vi1GqXtU770FqoL1q-To6UkW8zOwQ7T_RT2VBYTAwXbcdcoT03G5JUSzV36mf0Y9CpjNQZF_x0-pcUmx5fII3AgnyOZOeqn4sd4nsJSxZQkkbdbig-9-3i8DdQng7Q52o-IK"/>
+</div>
+<div class="aspect-square bg-surface-container-high rounded overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition-opacity duration-300">
+<img alt="Thumbnail 3" class="w-full h-full object-cover" data-alt="A close-up shot focusing on the high-quality stitching and craftsmanship of a sculptural lounge chair's upholstery. The pale pastel fabric contrasts beautifully with a minimalist, light gray surface. The lighting highlights the tactile nature of the material, evoking a sense of luxury and comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBka_-CQDgCEvRp-al77bc0rSa_PUkfdxmstT5_0ncaI2sCMPwCVoJ1Pd6dgssZGa26LuX5Otx99f0CazIQlxvvOlfhoOARCgAmLNOWjzkkLaST5Wo7LYlho-kUKi9jJgLVK419Y4FqIXf7s8MLD6kIYZD3oTB-LW7Gy5ySnEvAiyGWHOMufps-32jaBVhzXLvdOWd7XDtNwWXxY16aXcmGQ52DGpQx0olhOqyPUR2cKNqLujqwXR13gn_ISGUh1fIpMc_kG3fj_ea3"/>
+</div>
+</div>
+</div>
+<!-- Product Details & Actions -->
+<div class="col-span-1 lg:col-span-5 lg:pl-12 flex flex-col justify-start mt-8 lg:mt-0">
+<div class="mb-8">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2">Sculptural Lounge Chair</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant mb-6">$1,250</p>
+</div>
+<div class="space-y-8 mb-12">
+<!-- Description -->
+<div>
+<p class="font-body-lg text-body-lg text-secondary leading-relaxed mb-4">
+                            Embrace serenity with our Sculptural Lounge Chair. Designed with organic, fluid lines that mimic natural forms, this piece acts as a functional sculpture for your living space. 
+                        </p>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+                            Crafted from sustainably sourced solid ash wood and upholstered in a luxurious, tactile boucle fabric. The subtle brushed gold feet provide a grounding, elegant finish to this minimalist masterpiece.
+                        </p>
+</div>
+<!-- Material/Color Selection (Abstracted as simple text/circles for minimalism) -->
+<div class="border-t border-surface-variant pt-6">
+<span class="block font-label-sm text-label-sm text-on-surface uppercase mb-4">Select Finish</span>
+<div class="flex gap-4">
+<button aria-label="Pale Sage" class="w-8 h-8 rounded-full bg-surface-container-highest border border-primary relative" title="Pale Sage">
+<span class="absolute inset-0 m-auto w-2 h-2 rounded-full bg-primary"></span>
+</button>
+<button aria-label="Soft Blush" class="w-8 h-8 rounded-full bg-surface-variant border border-transparent hover:border-outline-variant transition-colors" title="Soft Blush"></button>
+<button aria-label="Ivory" class="w-8 h-8 rounded-full bg-surface border border-transparent hover:border-outline-variant transition-colors" title="Ivory"></button>
+</div>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="mt-auto">
+<button class="w-full bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest py-5 px-8 flex justify-center items-center gap-3 hover:bg-on-primary-container transition-colors duration-300 ease-out">
+<span>Add to Bag</span>
+</button>
+<!-- Secondary Utility Links -->
+<div class="flex justify-between mt-6 border-t border-surface-variant pt-6">
+<button class="font-label-sm text-label-sm text-on-surface-variant uppercase hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span> Delivery Info
+                        </button>
+<button class="font-label-sm text-label-sm text-on-surface-variant uppercase hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">straighten</span> Dimensions
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) - Suppressed for Product Details based on guidelines, but keeping structure if needed for other top-level pages. Commented out to adhere strictly to suppression logic for details page. -->
+<!--
+    <nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-3xl bg-white/70 dark:bg-stone-900/70 backdrop-blur-xl border-t border-stone-100 dark:border-stone-800 shadow-[0_-10px_30px_rgba(0,0,0,0.03)]">
+        <div class="flex justify-around items-center h-20 px-6 pb-safe">
+            <button class="flex flex-col items-center gap-1 text-stone-400 dark:text-stone-600 hover:text-stone-800 dark:hover:text-stone-200 transition-all duration-300">
+                <span class="material-symbols-outlined text-2xl transition-transform duration-500 ease-out" style="font-variation-settings: 'FILL' 0;">home</span>
+                <span class="font-sans text-[10px] uppercase tracking-tighter">home</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-stone-400 dark:text-stone-600 hover:text-stone-800 dark:hover:text-stone-200 transition-all duration-300">
+                <span class="material-symbols-outlined text-2xl transition-transform duration-500 ease-out" style="font-variation-settings: 'FILL' 0;">search</span>
+                <span class="font-sans text-[10px] uppercase tracking-tighter">search</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-stone-400 dark:text-stone-600 hover:text-stone-800 dark:hover:text-stone-200 transition-all duration-300">
+                <span class="material-symbols-outlined text-2xl transition-transform duration-500 ease-out" style="font-variation-settings: 'FILL' 0;">favorite</span>
+                <span class="font-sans text-[10px] uppercase tracking-tighter">favorite</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-stone-400 dark:text-stone-600 hover:text-stone-800 dark:hover:text-stone-200 transition-all duration-300">
+                <span class="material-symbols-outlined text-2xl transition-transform duration-500 ease-out" style="font-variation-settings: 'FILL' 0;">person</span>
+                <span class="font-sans text-[10px] uppercase tracking-tighter">person</span>
+            </button>
+        </div>
+    </nav>
+    -->
+</body></html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fresh Table - Discover</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c1c",
+                        "secondary": "#735c00",
+                        "outline": "#8d7169",
+                        "inverse-surface": "#2f3131",
+                        "inverse-primary": "#ffb59f",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed": "#3a0a00",
+                        "on-primary-container": "#641800",
+                        "on-tertiary-container": "#343434",
+                        "tertiary-container": "#9d9c9c",
+                        "primary-fixed-dim": "#ffb59f",
+                        "tertiary": "#5f5e5e",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1a1c1c",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#ebc23e",
+                        "surface-dim": "#dadada",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-tint": "#ac3509",
+                        "on-surface-variant": "#59413a",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#ff7043",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-fixed": "#ffe087",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#e4e2e1",
+                        "on-secondary-container": "#725b00",
+                        "secondary-container": "#fdd34d",
+                        "surface-variant": "#e2e2e2",
+                        "background": "#f9f9f9",
+                        "outline-variant": "#e0bfb6",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#ac3509",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed-variant": "#852300",
+                        "on-secondary-fixed-variant": "#574500",
+                        "primary-fixed": "#ffdbd0",
+                        "tertiary-fixed-dim": "#c8c6c6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "16px",
+                        "section-gap": "32px",
+                        "container-margin": "20px",
+                        "inline-padding": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(255, 112, 67, 0.12);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg pb-[88px] md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-zinc-100 dark:border-zinc-800 shadow-sm flex justify-between items-center px-5 h-16 w-full max-w-screen-xl mx-auto">
+<button class="text-orange-500 dark:text-orange-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors active:scale-95 duration-200 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+</button>
+<div class="font-['Plus_Jakarta_Sans'] text-xl font-extrabold tracking-tight text-orange-500 dark:text-orange-400">Fresh Table</div>
+<button class="text-orange-500 dark:text-orange-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors active:scale-95 duration-200 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="max-w-screen-xl mx-auto w-full">
+<!-- Search Section -->
+<section class="px-container-margin py-stack-gap">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-4 pl-12 pr-4 font-body-lg text-body-lg text-on-surface placeholder:text-tertiary focus:ring-2 focus:ring-primary-container outline-none transition-all" placeholder="What are you craving?" type="text"/>
+</div>
+<!-- Category Filters -->
+<div class="flex gap-3 mt-stack-gap overflow-x-auto hide-scrollbar pb-2">
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm transition-colors shadow-sm">All</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant border border-outline-variant font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors">Quick &amp; Easy</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant border border-outline-variant font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors">Healthy</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant border border-outline-variant font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors">Desserts</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant border border-outline-variant font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors">Vegetarian</button>
+</div>
+</section>
+<!-- Featured Recipes (Horizontal Carousel) -->
+<section class="py-stack-gap">
+<div class="px-container-margin mb-inline-padding flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md text-on-background">Featured Recipes</h2>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar px-container-margin pb-6 snap-x snap-mandatory">
+<!-- Recipe Card 1 -->
+<article class="min-w-[280px] w-[280px] md:min-w-[340px] md:w-[340px] bg-white rounded-xl overflow-hidden ambient-shadow snap-start shrink-0 cursor-pointer group">
+<div class="h-[200px] w-full relative overflow-hidden">
+<img alt="Featured Recipe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-resolution close-up of a vibrant, perfectly cooked steak dish on a clean white plate. The food is beautifully plated with bright green garnish and rich dark sauce, shot from a slightly elevated angle. The lighting is soft, warm, and natural, highlighting the juicy texture of the meat and creating a fresh, appetizing, high-end editorial culinary aesthetic against a minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZAFWR0jxGSr1lq8uFgEvwccjmwthhPTIAVjIi8XnaqGEgBv9RqZOupCAY5cdwyDsbLyox9Uy8IWdqzEb_U8yPtWdmfn-r6hFlIvjs6V20d7UmP6-p3wZXydRLv1WdJ_b_Bg27btXzsIYV4vdThUXt1gF7eKkcrrZ2hRtJTRNnNnw5eeIuXXA1foCFXa-xoLp-AlTqP9mkYNQpJqafzuYoefK2Y9rPAnEdyb71g7nWAvtNB2mddSdtX7exlMUZBo9cUQ0Xq4k1KkiP"/>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-2 flex items-center justify-center text-on-background hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+</div>
+<div class="p-4 bg-white">
+<h3 class="font-headline-md text-[18px] leading-[24px] font-semibold text-on-background mb-1 truncate">Grilled Ribeye with Chimichurri</h3>
+<div class="flex items-center text-tertiary font-body-lg text-[14px] gap-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 25 min</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">restaurant</span> Medium</span>
+</div>
+</div>
+</article>
+<!-- Recipe Card 2 -->
+<article class="min-w-[280px] w-[280px] md:min-w-[340px] md:w-[340px] bg-white rounded-xl overflow-hidden ambient-shadow snap-start shrink-0 cursor-pointer group">
+<div class="h-[200px] w-full relative overflow-hidden">
+<img alt="Featured Recipe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A bright, overhead shot of a fresh pasta dish served in a modern, shallow ceramic bowl. The pasta is vibrant yellow, tossed with bright red cherry tomatoes, vibrant green basil leaves, and dusted with grated parmesan. The scene is brightly lit with a clean, light-mode aesthetic, utilizing white space to emphasize the colorful, fresh ingredients in a warm, inviting manner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYsEM6iByIXNbuIhy8dLvz6K-isdYcHVgUpe0p0VjMBl9EgkuwWxQrj_lt8Y60M0l2vI5dzf5-z_xCvSj2gNXxI3Kecf4mmeieS4BLPl9diKg4aPQdwDjLqzxwEfsxDOWxZ4WhWCvtUni7RySSOAHZuBQd4vkSME6VcU9m-t3LDx3qvXQ0dPHXl7YVRhcYIjOan_BQr_qCBkOIkGXVscUWf48vT0hchQVDUPDPWn2ra9LG3InJIwzrHDtpo4OmXBXaMjhgAvK61Lr7"/>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-2 flex items-center justify-center text-on-background hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+</div>
+<div class="p-4 bg-white">
+<h3 class="font-headline-md text-[18px] leading-[24px] font-semibold text-on-background mb-1 truncate">Summer Tomato Basil Pasta</h3>
+<div class="flex items-center text-tertiary font-body-lg text-[14px] gap-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 15 min</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">restaurant</span> Easy</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Trending Now (Vertical List) -->
+<section class="px-container-margin py-stack-gap">
+<h2 class="font-headline-md text-headline-md text-on-background mb-stack-gap">Trending Now</h2>
+<div class="flex flex-col gap-4">
+<!-- Trending Item 1 -->
+<article class="flex gap-4 p-3 bg-white rounded-xl ambient-shadow items-center cursor-pointer hover:bg-surface-container-lowest transition-colors">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+<img alt="Trending Recipe" class="w-full h-full object-cover" data-alt="A close-up shot of a colorful, fresh salad bowl on a bright white surface. The salad features deep green spinach, bright red strawberries, toasted nuts, and creamy feta cheese crumbles. The lighting is bright and airy, characteristic of a high-end food magazine, with soft shadows that make the fresh ingredients pop in a minimalist setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzSjLUMz8CWf6IkI4UDNtcrBxm-DbMAXCgExofdhhXhAT4LLfeujnivYnBeE_JPxWs_Yed02jbsgeSfCwsPtMTlRHadztbvcUXDSfywxSxOJTDy6Rbj5rmhhyxDVFNJDUIG1u-XLyf5q6z14ctaMLkynSE99mUtcU1TjzAHne22JYC7M_y3uuekje_yEdXTvv6lSz6vkmlgAxJvvNXSDluHryOSS7C8-dcfaV_hWJ92qYEZNHFMzcT8KnggcBFZCN_5sDH-ggh86Jx"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-md text-[16px] leading-[22px] font-semibold text-on-background truncate">Summer Berry Salad</h3>
+<p class="font-body-lg text-[14px] text-tertiary mt-1">Light &amp; Refreshing</p>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</article>
+<!-- Trending Item 2 -->
+<article class="flex gap-4 p-3 bg-white rounded-xl ambient-shadow items-center cursor-pointer hover:bg-surface-container-lowest transition-colors">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+<img alt="Trending Recipe" class="w-full h-full object-cover" data-alt="A top-down view of a perfectly baked artisanal pizza on a wooden peel, resting on a white marble countertop. The pizza has a blistered crust, melted fresh mozzarella, and bright red tomato sauce, garnished with fresh basil. The composition is clean and minimalist, using soft, natural light to highlight the warm, appetizing colors and textures of the food." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuIKRyEAoL_aYoMWRHXboseFlW2a_yPTzrfO1-o3wWF7_yXRIv4aPgDMhue6uPwIRFCHUVax-zYzKCQNc_OzbipNm_lveXjSAKiS5yI3SHZ670L0LXyr-pxxF4j_pBd5jjPrGP_f0iUN4mEaLL7HuOxSCEnc-k1JEODIybDwkm0sidglGOrRE02fLBpTxSGo8Eyqyibk41fBpihAzJjEZ-dgJv-QyXU25WLZf_bGTw7cMfMXkM6_C7qRcTSfv9HF7WSh5ITY7819W0"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-md text-[16px] leading-[22px] font-semibold text-on-background truncate">Margherita Pizza</h3>
+<p class="font-body-lg text-[14px] text-tertiary mt-1">Classic Italian</p>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</article>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden bg-white dark:bg-zinc-950 fixed bottom-0 w-full z-50 rounded-t-2xl border-t border-zinc-100 dark:border-zinc-800 tonal-layer-1 bg-zinc-50 dark:bg-zinc-900 shadow-[0_-4px_20px_rgba(255,112,67,0.08)] fixed bottom-0 left-0 right-0 flex justify-around items-center px-4 py-3 bg-white dark:bg-zinc-950 pb-safe">
+<button class="flex flex-col items-center justify-center text-orange-500 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20 rounded-xl px-3 py-1.5 hover:text-orange-400 dark:hover:text-orange-300 Active: scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide mt-1">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-3 py-1.5 hover:text-orange-400 dark:hover:text-orange-300 Active: scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide mt-1">Saved</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-3 py-1.5 hover:text-orange-400 dark:hover:text-orange-300 Active: scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide mt-1">List</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-3 py-1.5 hover:text-orange-400 dark:hover:text-orange-300 Active: scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

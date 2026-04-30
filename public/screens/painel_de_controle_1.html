@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EVOLVE - Home Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&amp;family=Space+Grotesk:wght@600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#dae1ff",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed-variant": "#003fa4",
+                        "on-secondary": "#002b75",
+                        "on-secondary-container": "#f9f7ff",
+                        "secondary-container": "#0266ff",
+                        "secondary": "#b3c5ff",
+                        "secondary-fixed-dim": "#b3c5ff",
+                        "surface": "#131313",
+                        "on-primary": "#2c3400",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed": "#001849",
+                        "outline": "#909378",
+                        "on-primary-fixed-variant": "#414c00",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-tertiary-container": "#656464",
+                        "on-primary-container": "#5d6b00",
+                        "background": "#131313",
+                        "surface-container": "#201f1f",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#d2f000",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary": "#313030",
+                        "surface-variant": "#353534",
+                        "surface-dim": "#131313",
+                        "inverse-primary": "#576500",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-container": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffffff",
+                        "outline-variant": "#454932",
+                        "primary-fixed-dim": "#b8d300",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-fixed": "#191e00",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-bright": "#393939",
+                        "on-surface": "#e5e2e1",
+                        "primary": "#ffffff",
+                        "surface-tint": "#b8d300",
+                        "error-container": "#93000a",
+                        "primary-container": "#d2f000",
+                        "on-surface-variant": "#c6c9ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "md": "24px",
+                        "gutter": "16px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "lg": "40px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "label-bold": ["Lexend"],
+                        "display-xl": ["Space Grotesk"],
+                        "body-lg": ["Lexend"],
+                        "body-md": ["Lexend"],
+                        "stat-lg": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "stat-lg": ["40px", { "lineHeight": "1.0", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 bg-[#121212]/70 backdrop-blur-xl border-b border-[#2A2A2A] z-50">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a fit individual with a focused expression, set against a dark, moody background. The lighting highlights their determined features, fitting a high-performance fitness app aesthetic. The image is cropped into a perfect circle, representing a user profile avatar in a digital interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzKSQMduC4x6CT9arEGImwMAS1rP4nEkQnHld0HT2X8qfAjL5n3oGpx7uqIiemFnfGLEqvKMYAEH_SJdvFJ5AOrK_yW25nQJkeo8lLoPejHKvVzaa_4xeNSyOgGF44--ITTpY6kWxc0Q_7E8nFBzxn83d8WO8tZve-2b_lzdzgbuWZ5aSEa7bC7HO246JI1hZP3mIiOnJ7ZWXNoBPoInzZoAtvKJp5K2yYowpzkvGGAHpmaF49tSncL41wz78KbHfAhUpXOnoz3zYu"/>
+</div>
+<h1 class="font-['Space_Grotesk'] font-black text-primary-container uppercase italic text-2xl tracking-tighter">EVOLVE</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="pt-28 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto flex flex-col gap-lg">
+<!-- Welcome & Date -->
+<section class="flex flex-col gap-1">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Ready to crush it?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Today, Oct 24</p>
+</section>
+<!-- Daily Goals (Bento Grid) -->
+<section class="grid grid-cols-2 md:grid-cols-3 gap-gutter">
+<!-- Calories Ring -->
+<div class="bg-surface-container-high rounded-xl p-md border border-surface-container flex flex-col items-center justify-center gap-sm relative col-span-2 md:col-span-1 shadow-[inset_0_0_20px_rgba(210,240,0,0.05)] border-l-4 border-l-primary-container">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full absolute inset-0" viewbox="0 0 100 100">
+<circle class="text-surface-container-highest stroke-current" cx="50" cy="50" fill="transparent" r="40" stroke-width="8"></circle>
+<circle class="text-primary-container stroke-current progress-ring__circle" cx="50" cy="50" fill="transparent" r="40" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="flex flex-col items-center">
+<span class="font-stat-lg text-stat-lg text-on-surface">840</span>
+<span class="font-label-bold text-label-bold text-primary-container">KCAL</span>
+</div>
+</div>
+<div class="text-center">
+<p class="font-label-bold text-label-bold text-on-surface uppercase">Energy</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Goal: 1200</p>
+</div>
+</div>
+<!-- Steps & Active Minutes Mini Grid -->
+<div class="col-span-2 md:col-span-2 grid grid-cols-2 gap-gutter">
+<!-- Steps -->
+<div class="bg-surface-container-high rounded-xl p-md border border-surface-container flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary-container text-3xl">directions_run</span>
+<span class="font-body-md text-body-md text-on-surface-variant">75%</span>
+</div>
+<div>
+<p class="font-stat-lg text-stat-lg text-on-surface">6,430</p>
+<p class="font-label-bold text-label-bold text-secondary-container uppercase mt-1">Steps</p>
+</div>
+<!-- Linear Progress -->
+<div class="w-full h-2 bg-surface-container-highest rounded-full mt-4 overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Active Minutes -->
+<div class="bg-surface-container-high rounded-xl p-md border border-surface-container flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-container text-3xl">timer</span>
+<span class="font-body-md text-body-md text-on-surface-variant">110%</span>
+</div>
+<div>
+<p class="font-stat-lg text-stat-lg text-on-surface">45</p>
+<p class="font-label-bold text-label-bold text-primary-container uppercase mt-1">Active Min</p>
+</div>
+<!-- Linear Progress -->
+<div class="w-full h-2 bg-surface-container-highest rounded-full mt-4 overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Start / Continue -->
+<section class="flex flex-col gap-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface">Quick Start</h3>
+<div class="bg-surface-container-high rounded-xl p-md border border-surface-container flex items-center gap-md relative overflow-hidden group hover:border-primary-container transition-colors cursor-pointer">
+<!-- Background Gradient Accent -->
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-secondary-container opacity-20 blur-3xl rounded-full group-hover:opacity-40 transition-opacity"></div>
+<div class="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center shrink-0 border border-surface-container-highest">
+<span class="material-symbols-outlined text-secondary-container text-3xl" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+<div class="flex-1 z-10">
+<p class="font-label-bold text-label-bold text-secondary-container uppercase mb-1">Continue Program</p>
+<h4 class="font-headline-md text-headline-md text-on-surface text-xl">Upper Body Power</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Week 3 • Day 2 • 45 Min</p>
+</div>
+<button class="w-12 h-12 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(210,240,0,0.4)] z-10 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</section>
+<!-- Daily Recommended (Horizontal Scroll) -->
+<section class="flex flex-col gap-sm">
+<div class="flex justify-between items-end mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Daily Recommended</h3>
+<button class="font-label-bold text-label-bold text-primary-container uppercase text-xs">View All</button>
+</div>
+<div class="flex gap-md overflow-x-auto hide-scrollbar pb-4 snap-x">
+<!-- Card 1 -->
+<div class="min-w-[280px] w-[280px] h-[340px] rounded-xl overflow-hidden relative snap-center group border border-surface-container cursor-pointer">
+<img alt="HIIT Workout" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-intensity interval training session. A muscular athlete is captured mid-air performing a box jump in a dark, grimy industrial gym setting. Dramatic overhead lighting casts deep shadows, emphasizing their physique. The color grading leans heavy into stark contrasts with a subtle teal and orange cinematic vibe. Energetic and intense mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQoYDvO949EzflsE9X_OgjvObl9SIjwTgVSapD0P8arU_XyOqr8AYWHHKa3myz2t3NxGXOA1-7Ulz9ccLjfxJBM05iOCLxgKxX6fRQPnEJgAyMeK9i1_8elQxoOxJ6FAoTJzg1XSr4tW9SIdLBWVhvmBDXJWubyiQVwLuKlALgCwmAjDx_HYwYpqsJkchaZ9804o15p4cawynT5a1pt9OrHZPAtOtpaYV7xg7hLYUmhn0qOl7Y8nQmEoqtPa8-Y4h63fhuyB5sf1Dh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-md flex flex-col gap-2">
+<div class="flex gap-2 mb-1">
+<span class="px-2 py-1 bg-surface/80 backdrop-blur text-primary-container font-label-bold text-xs uppercase rounded-full border border-primary-container/30">HIIT</span>
+<span class="px-2 py-1 bg-surface/80 backdrop-blur text-on-surface font-label-bold text-xs uppercase rounded-full border border-surface-container">20 Min</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-xl">Metabolic Burn</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">High intensity full body circuit.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[280px] w-[280px] h-[340px] rounded-xl overflow-hidden relative snap-center group border border-surface-container cursor-pointer">
+<img alt="Core Workout" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A focused fitness enthusiast performing a complex core exercise on a dark mat. The gym environment is dimly lit with sleek, modern equipment visible in the blurred background. Neon blue rim lighting subtly traces the edges of the subject's form, adding a cyberpunk-esque technological feel to the raw physical effort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBwKZnPtls6jR1gAg4Nk_90Z8TfX-KPLBR7akPPzNhQ36qaw7vPZAvXQTDOGe1KvHW4Ugud-E8oIDVDgcMGrTCmQjTlhOvraD13CbjFlQKZKYCnAtOG1RX42t-e6ObtusHpM89RogrcNpOieOIrNM_9rBhnVuZc0_nUGicVhsdl4rAkOa4M3PMnyz5Aw1H09bm8T1opIh8O3zoDFPtIM_HmvYeP8q1wDgDotOope3W3RiJVQdsTkBU6VVvkApW_z4QjbgKKYVBmshQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-md flex flex-col gap-2">
+<div class="flex gap-2 mb-1">
+<span class="px-2 py-1 bg-surface/80 backdrop-blur text-secondary-container font-label-bold text-xs uppercase rounded-full border border-secondary-container/30">Core</span>
+<span class="px-2 py-1 bg-surface/80 backdrop-blur text-on-surface font-label-bold text-xs uppercase rounded-full border border-surface-container">15 Min</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-xl">Iron Midsection</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Sculpt and stabilize your core.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="min-w-[280px] w-[280px] h-[340px] rounded-xl overflow-hidden relative snap-center group border border-surface-container cursor-pointer">
+<img alt="Mobility Flow" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An athlete in a deep, dynamic stretching pose in an empty, minimalist studio space. The room features dark concrete floors and walls, illuminated only by a sliver of harsh white light slicing through a window, creating dramatic geometric shadows. The aesthetic is clean, precise, and heavily focused on form and control." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHFRvS5380RCwBgH-L2oDnJmkMNGX-UJuKqCmcqj8zbBDEIWnHPsxw5Jc8AUHa-eyxo59KbVGSTlsU2tR16ANKsNM_uJr2hwzMECdA1pGGCaze3p3y5zz1KR3BX8IqlVaaiZk2XO-TJgB-7BTXxZlRhTw_p4nuhkyMsyoCk64kJ7yMnV4khjTNI5nLNe21uGyjC2hvOWLq8Wop5CDInQqM2yMhtIcu5D9Z0fMdcRSiVRrWMRhf6IzPE30LaIHh7v8WyYu9yZCxiS8W"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-md flex flex-col gap-2">
+<div class="flex gap-2 mb-1">
+<span class="px-2 py-1 bg-surface/80 backdrop-blur text-on-surface font-label-bold text-xs uppercase rounded-full border border-surface-container">Recovery</span>
+<span class="px-2 py-1 bg-surface/80 backdrop-blur text-on-surface font-label-bold text-xs uppercase rounded-full border border-surface-container">10 Min</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-xl">Dynamic Mobility</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Essential daily movement flow.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#121212]/80 backdrop-blur-2xl rounded-t-3xl border-t border-[#2A2A2A] shadow-[0_-4px_20px_rgba(223,255,0,0.05)] md:hidden z-50">
+<!-- Active: Home -->
+<a class="flex flex-col items-center justify-center text-[#DFFF00] bg-[#DFFF00]/10 rounded-xl px-4 py-1 shadow-[inset_0_0_10px_rgba(223,255,0,0.2)] scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest text-[#DFFF00]">Home</span>
+</a>
+<!-- Inactive: Workouts -->
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:opacity-100 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">fitness_center</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest">Workouts</span>
+</a>
+<!-- Inactive: History -->
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:opacity-100 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">history</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest">History</span>
+</a>
+<!-- Inactive: Profile -->
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:opacity-100 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>

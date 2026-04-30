@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Destinations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#1b1c19",
+                      "surface-tint": "#525f74",
+                      "on-secondary-fixed": "#360f00",
+                      "on-tertiary-fixed-variant": "#5d4201",
+                      "secondary-fixed-dim": "#ffb597",
+                      "surface-variant": "#e4e2dd",
+                      "outline-variant": "#c5c6cd",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#fbf9f4",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#261900",
+                      "surface-container-high": "#eae8e3",
+                      "surface-container-highest": "#e4e2dd",
+                      "secondary-container": "#fd9a6f",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#bac7df",
+                      "primary-fixed-dim": "#bac7df",
+                      "error-container": "#ffdad6",
+                      "inverse-surface": "#30312e",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#964824",
+                      "on-tertiary-fixed": "#261900",
+                      "on-surface": "#1b1c19",
+                      "primary-container": "#0f1c2e",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-tertiary-container": "#a17f3b",
+                      "on-secondary-fixed-variant": "#77320e",
+                      "on-surface-variant": "#44474c",
+                      "tertiary-fixed-dim": "#e9c176",
+                      "primary-fixed": "#d6e3fc",
+                      "surface-container-low": "#f5f3ee",
+                      "surface-dim": "#dbdad5",
+                      "on-primary-container": "#78849b",
+                      "tertiary": "#000000",
+                      "on-primary-fixed-variant": "#3b475b",
+                      "background": "#fbf9f4",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#0f1c2e",
+                      "secondary-fixed": "#ffdbcd",
+                      "on-secondary-container": "#76300d",
+                      "on-secondary": "#ffffff",
+                      "outline": "#75777d",
+                      "primary": "#000000",
+                      "surface-container": "#f0eee9",
+                      "tertiary-fixed": "#ffdea5",
+                      "surface": "#fbf9f4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "element-gap": "12px",
+                      "unit": "8px",
+                      "section-gap": "48px",
+                      "container-margin": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Noto Serif"
+                      ],
+                      "body-md": [
+                              "Be Vietnam Pro"
+                      ],
+                      "headline-xl": [
+                              "Noto Serif"
+                      ],
+                      "label-md": [
+                              "Be Vietnam Pro"
+                      ],
+                      "headline-md": [
+                              "Noto Serif"
+                      ],
+                      "body-lg": [
+                              "Be Vietnam Pro"
+                      ],
+                      "label-sm": [
+                              "Be Vietnam Pro"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hiding for horizontal chip list */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md antialiased pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#fdfbf7] dark:bg-[#0f1c2e] border-none flex justify-between items-center w-full px-6 h-20 sticky top-0 z-40">
+<button class="text-[#0f1c2e] dark:text-[#e5d3b3] hover:opacity-70 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-serif text-2xl tracking-[0.2em] text-[#0f1c2e] dark:text-[#e5d3b3] uppercase text-center flex-1">LUMINA</h1>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden hover:opacity-70 transition-opacity cursor-pointer border border-outline-variant">
+<!-- Using an image here as an avatar placeholder, styled directly as per request constraints to not alter brand logo but structural logic dictates avatar -->
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a sophisticated person with a calm expression, softly lit against a neutral sand-toned background. The mood is serene and refined, reflecting a quiet luxury aesthetic. Warm, gentle studio lighting highlights their features naturally." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAig4vs5UR8rHeKrKktU17C_mkI_xfag-O6HxDGPfPWCofbMhUnT-8jJDx4UMcw_kLpAeIy9lVc5evaA9NZW0LubGuh4pYgNVHXAjT-IrWED26rO_F-lNrKOqXg7ao9ngUPu2xEoq9HL_xWyaF2Rqj-JZj0qAzYqXYYGiG38nFh4EyX6lG3ayhAWtSHEtNuOKzpQQSMX9i96vOtnug6Te-_2Yuj8Sntb2E_iarX4gOCv97cz9S6WV1DB_Lyw28ywFglPCxRyZNAG3ic"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-container-margin mt-8 flex flex-col gap-section-gap max-w-5xl mx-auto">
+<!-- Search & Discovery Intent -->
+<section class="flex flex-col gap-element-gap">
+<h2 class="font-headline-lg text-headline-lg text-primary-container w-3/4 leading-tight">Where will your quiet moments be?</h2>
+<div class="relative mt-4 group">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none" data-icon="search">search</span>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-tertiary-fixed-dim focus:ring-0 pl-10 pb-2 text-body-lg font-body-lg placeholder-on-surface-variant transition-colors rounded-none outline-none" placeholder="Search destinations, atmospheres..." type="text"/>
+</div>
+</section>
+<!-- Curated Categories (Chips) -->
+<section class="-mx-container-margin px-container-margin overflow-x-auto hide-scrollbar">
+<div class="flex gap-element-gap w-max pb-4">
+<button class="bg-primary-container text-on-primary rounded-full px-6 py-3 font-label-md text-label-md tracking-wider transition-opacity hover:opacity-90">All Explorations</button>
+<button class="bg-surface-container-low border border-surface-dim text-primary-container rounded-full px-6 py-3 font-label-md text-label-md tracking-wider transition-colors hover:bg-surface-container">Hidden Gems</button>
+<button class="bg-surface-container-low border border-surface-dim text-primary-container rounded-full px-6 py-3 font-label-md text-label-md tracking-wider transition-colors hover:bg-surface-container">Coastal Retreats</button>
+<button class="bg-surface-container-low border border-surface-dim text-primary-container rounded-full px-6 py-3 font-label-md text-label-md tracking-wider transition-colors hover:bg-surface-container">Mountain Escapes</button>
+</div>
+</section>
+<!-- Daily Discovery (Hero Section) -->
+<section class="flex flex-col gap-unit">
+<div class="flex justify-between items-baseline mb-2">
+<h3 class="font-label-sm text-label-sm uppercase text-on-surface-variant">Daily Discovery</h3>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim tracking-widest">01 / 05</span>
+</div>
+<!-- High-end image treatment breaking the typical grid slightly -->
+<div class="relative w-full aspect-[4/5] md:aspect-[21/9] rounded-DEFAULT overflow-hidden group">
+<img alt="Amalfi Coast" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A breathtaking, expansive view of a rugged coastline meeting a deep, serene blue ocean. The scene is bathed in the soft, warm golden hour light, casting long shadows and highlighting the tactile textures of the cliffside. The mood is expansive, tranquil, and sophisticated, perfectly capturing the essence of quiet luxury travel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9-saLaBLoHiY22n_J7U3Q1297vaELa2CS6P04VFYmyXlKAc6qlhW-EIvh46CWrI63BgtfQ1VYPz33b3ScziEcGRO7vFgiy5XkvxD6B0uERnMfGeKDUn0-ingBLn86STyAQW8M3AOX22GZXImCrV3gL8qNY9TCRoKOXXfIChbJUijiNK96hjEOQWRKUlhYnzx52mjsYjBnWFmzG0nnWpodQK0zjYaMcWr9y351R1sIYByyXervqTG0J8oBU0SlFNzTiSkPSnQL4DdW"/>
+<!-- Subtle gradient overlay for text legibility without muddying the image -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-primary-container/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 md:p-12 w-full text-on-primary">
+<p class="font-label-sm text-label-sm tracking-widest mb-2 opacity-90 uppercase">Coastal Retreat</p>
+<h2 class="font-headline-xl text-headline-xl mb-4">Aether Cliffs</h2>
+<p class="font-body-md text-body-md max-w-md opacity-90 mb-6 hidden md:block">Experience the unhurried rhythm of the sea from perched sanctuaries overlooking the azure expanse.</p>
+<button class="bg-transparent border border-on-primary/50 text-on-primary font-label-md text-label-md px-8 py-3 uppercase tracking-wider hover:bg-on-primary hover:text-primary-container transition-colors backdrop-blur-sm">
+                        Explore Sanctuaries
+                    </button>
+</div>
+</div>
+</section>
+<!-- Asymmetric Bento Grid for Secondary Destinations -->
+<section class="flex flex-col gap-element-gap mt-8">
+<h3 class="font-label-sm text-label-sm uppercase text-on-surface-variant mb-4">Curated Journals</h3>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-element-gap">
+<!-- Large card -->
+<div class="md:col-span-7 bg-surface-container-low rounded-DEFAULT overflow-hidden group cursor-pointer">
+<div class="h-64 overflow-hidden">
+<img alt="Parisian Architecture" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="An elegant, tight architectural detail shot of a classic Parisian building facade in muted sand and pale cream tones. The lighting is soft and diffuse, highlighting the intricate stonework and wrought iron balconies without harsh shadows. The aesthetic is extremely refined, minimalist, and deeply evocative of historic, sophisticated urban exploration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPeBvvTEdCZoHxITDp1DPIJ0vS6x9VQ3o1k8NjkJsgW79h-9e6cQs2WPwRNT9IzVt3Lp5YgnAxxfDsaRFAxe2g0PXIYQFr-wDqFMXwdpV_2tuZ0Esscr-SrT9yuogmsKBAop89cKZdSFaAyUjDDU0fA_P6eJzmD3g9gHMQ0N_Ko-OQpWt8I4ry3sjBMU-sljPWqdwW8WgasLXhEVRKRoYRbG1lf3yVKqxL6ROpL-bYEmIzuyEZ6K3KoiT06sJviyeAOM0UmpB_8Eqc"/>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-headline-md text-primary-container mb-2">Urban Solitude</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Discovering quiet corners in the heart of historic metropolises.</p>
+</div>
+</div>
+<!-- Small card -->
+<div class="md:col-span-5 bg-surface-container-low rounded-DEFAULT overflow-hidden group cursor-pointer flex flex-col">
+<div class="h-40 md:flex-1 overflow-hidden">
+<img alt="Mountain Peak" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A majestic, misty mountain peak emerging through a sea of soft clouds. The color palette is dominated by deep, moody blues and muted greys, creating a sense of profound stillness and awe. The lighting is atmospheric and cool, perfect for a minimalist, high-end travel aesthetic focusing on nature's quiet grandeur." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB0OWQuKsxinLUikJXD5UTYfw6R62z4oqjRzxO3oIlhMYUPbch33HclAc6BiCLYaNapJbtoTz_gWoPZsNb06XOeghG6Ez7x_4jS-gxLMeUrdN6YdLLx5YbtR1_e8EzJdZKVce7UlGfHyA55IV4BaP7CBDGYkkhrgkhHRnySdxR_8GXRk0Xkjuyz4LEBU1zA3PgT-ENtzNl9uB68uXyPAgyw4sPlH5A2s92lDpbnFBWdiVyA6wsG6CkBnHHHp332ZpJSt6EfxC5uUEm"/>
+</div>
+<div class="p-6 bg-[#e5d3b3]/20"> <!-- Using the Sand tone overlay as specified in Style Guidance for cards -->
+<h4 class="font-headline-md text-headline-md text-primary-container mb-1">High Altitudes</h4>
+<p class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-widest">Mountain Escapes</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-[#fdfbf7]/90 dark:bg-[#0f1c2e]/95 backdrop-blur-md shadow-[0_-4px_24px_rgba(15,28,46,0.04)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-8 pt-4 border-t border-[#e5d3b3]/20 md:hidden">
+<!-- Explore (Active) -->
+<button class="hover:text-[#c5a059] transition-colors active:translate-y-[-2px] duration-300 flex flex-col items-center justify-center text-[#c5a059] after:content-[''] after:w-1 after:h-1 after:bg-[#c5a059] after:rounded-full after:mt-1">
+<span class="material-symbols-outlined" data-icon="explore" data-weight="fill" style="font-variation-settings: 'FILL' 1;">explore</span>
+</button>
+<!-- Bookmark (Inactive) -->
+<button class="hover:text-[#c5a059] transition-colors active:translate-y-[-2px] duration-300 flex flex-col items-center justify-center text-[#0f1c2e]/60 dark:text-[#e5d3b3]/60">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+<!-- Person (Inactive) -->
+<button class="hover:text-[#c5a059] transition-colors active:translate-y-[-2px] duration-300 flex flex-col items-center justify-center text-[#0f1c2e]/60 dark:text-[#e5d3b3]/60">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</nav>
+</body></html>

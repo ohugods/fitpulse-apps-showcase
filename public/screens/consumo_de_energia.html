@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Home - Energy Insights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#554424",
+                      "on-secondary-fixed": "#261901",
+                      "primary-fixed-dim": "#ffb77b",
+                      "surface-container-highest": "#e5e2e1",
+                      "inverse-surface": "#313030",
+                      "tertiary-fixed-dim": "#c6c6c8",
+                      "tertiary-container": "#737576",
+                      "primary-fixed": "#ffdcc2",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-low": "#f6f3f2",
+                      "surface-tint": "#8c4f10",
+                      "background": "#fcf9f8",
+                      "on-primary-fixed-variant": "#6d3a00",
+                      "outline": "#857467",
+                      "primary-container": "#a76526",
+                      "secondary": "#6e5c39",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#5a5c5e",
+                      "surface-container-high": "#eae7e7",
+                      "outline-variant": "#d8c3b4",
+                      "secondary-fixed-dim": "#dcc399",
+                      "surface-bright": "#fcf9f8",
+                      "on-tertiary-fixed-variant": "#454749",
+                      "on-primary-container": "#fffbff",
+                      "primary": "#894d0d",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#e2e2e4",
+                      "on-background": "#1c1b1b",
+                      "secondary-fixed": "#f9dfb3",
+                      "on-tertiary-fixed": "#1a1c1d",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#2e1500",
+                      "inverse-primary": "#ffb77b",
+                      "inverse-on-surface": "#f3f0ef",
+                      "surface-variant": "#e5e2e1",
+                      "surface": "#fcf9f8",
+                      "secondary-container": "#f9dfb3",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#524439",
+                      "on-tertiary-container": "#fcfcfe",
+                      "surface-container": "#f0eded",
+                      "on-surface": "#1c1b1b",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dcd9d9",
+                      "on-secondary-container": "#74623f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "16px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "container-padding": "40px",
+                      "section-gap": "64px",
+                      "stack-lg": "32px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "stat-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-base": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "stat-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-base": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0em",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        /* Custom hide scrollbar for horizontal scrolling zones */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen relative selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 h-16 bg-white/70 dark:bg-stone-950/70 backdrop-blur-md border-b border-stone-200/40 dark:border-stone-800/40 transition-all">
+<div class="flex items-center gap-stack-lg">
+<h1 class="font-['Inter'] tracking-[0.3em] font-light text-sm text-stone-900 dark:text-stone-50">LUMINA</h1>
+<!-- Desktop Nav Cluster (Injected from BottomNavBar JSON per rules) -->
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-['Inter'] text-[10px] uppercase tracking-tighter font-semibold text-[#B87333] hover:text-[#B87333] transition-colors duration-300 active:opacity-70 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+                    Dashboard
+                </a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-tighter font-semibold text-stone-400 hover:text-[#B87333] transition-colors duration-300 active:opacity-70 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">wb_incandescent</span>
+                    Devices
+                </a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-tighter font-semibold text-stone-400 hover:text-[#B87333] transition-colors duration-300 active:opacity-70 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">thermostat</span>
+                    Climate
+                </a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-tighter font-semibold text-stone-400 hover:text-[#B87333] transition-colors duration-300 active:opacity-70 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+                    Security
+                </a>
+</nav>
+</div>
+<div class="flex items-center gap-stack-md">
+<button aria-label="notifications" class="w-8 h-8 flex items-center justify-center rounded-full text-stone-400 hover:text-[#B87333] transition-colors duration-300 active:opacity-70">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/50 cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A tightly framed, professional studio portrait of a woman with natural lighting. The background is a soft, minimalist neutral gray, matching the high-end, clean aesthetic of a modern luxury UI. Her expression is calm and approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZSa3eqmhvV2jFjB4vKO9q1Soc2hgSQVOseaPDWbRPSQ4uGRbcsG1LMhY6C6xKfGrPCQWvJS-WqQTAW4spUdCIkgVR55wAiVPm-aIvPrs4MoW4tBpzY6NYfaoZ0UMIaaMVPUOoeV5oYBER3ebmDcWJaW652r2u7WQSjT-iSINd28nsY-f2HAvjG1cSE8EevDJSkjU6gsDC3NIIPjjT8VYnPNC_82VSI4sSirBprcY0HLwWLSDgXvLJ1Zish4-5GCMsPKrLXetx-WhS"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[104px] pb-[120px] md:pb-section-gap px-6 md:px-container-padding max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-section-gap flex flex-col md:flex-row md:items-end justify-between gap-stack-lg">
+<div class="flex flex-col gap-unit">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Energy Insights</h2>
+<div class="flex items-baseline gap-stack-md">
+<span class="font-display-lg text-display-lg text-on-surface">142</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">kWh</span>
+</div>
+<p class="font-body-base text-body-base text-on-surface-variant flex items-center gap-2 mt-unit">
+<span class="material-symbols-outlined text-sm text-secondary">trending_down</span>
+                    12% less than last week
+                </p>
+</div>
+<div class="inline-flex items-center gap-2 bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant/30 cursor-pointer hover:bg-surface-container transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface">This Week</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Interactive Line Chart (Glassmorphism Card) -->
+<section class="mb-section-gap rounded-xl bg-gradient-to-br from-surface-container-lowest to-surface/50 backdrop-blur-xl border border-outline-variant/30 shadow-[0_10px_40px_rgba(0,0,0,0.02)] p-gutter md:p-container-padding relative overflow-hidden">
+<!-- Decorative ambient glow -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex justify-between items-center mb-stack-lg relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface">Consumption Trend</h3>
+<button aria-label="More options" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">more_horiz</span>
+</button>
+</div>
+<!-- SVG Chart Representation -->
+<div class="w-full h-[240px] relative z-10">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 800 200">
+<!-- Grid Lines -->
+<line class="text-outline-variant/30" stroke="currentColor" stroke-dasharray="4 4" x1="0" x2="800" y1="50" y2="50"></line>
+<line class="text-outline-variant/30" stroke="currentColor" stroke-dasharray="4 4" x1="0" x2="800" y1="100" y2="100"></line>
+<line class="text-outline-variant/30" stroke="currentColor" stroke-dasharray="4 4" x1="0" x2="800" y1="150" y2="150"></line>
+<!-- Gradient Def -->
+<defs>
+<lineargradient id="chartGlow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#894d0d" stop-opacity="0.15"></stop>
+<stop offset="100%" stop-color="#894d0d" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Data Area Fill -->
+<path d="M0,180 L0,140 C100,140 150,80 250,90 C350,100 400,160 500,130 C600,100 700,40 800,60 L800,180 Z" fill="url(#chartGlow)"></path>
+<!-- Data Line -->
+<path class="drop-shadow-sm" d="M0,140 C100,140 150,80 250,90 C350,100 400,160 500,130 C600,100 700,40 800,60" fill="none" stroke="#894d0d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Active Data Point -->
+<circle cx="500" cy="130" fill="#ffffff" r="5" stroke="#894d0d" stroke-width="2"></circle>
+<circle class="animate-pulse" cx="500" cy="130" fill="#894d0d" opacity="0.2" r="12"></circle>
+</svg>
+</div>
+<!-- X-Axis Labels -->
+<div class="flex justify-between mt-stack-md relative z-10 px-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Mon</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Tue</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Wed</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Thu</span>
+<span class="font-label-caps text-label-caps text-primary">Fri</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Sat</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Sun</span>
+</div>
+</section>
+<!-- Breakdown Bento Grid -->
+<section class="mb-section-gap">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-lg">Appliance Breakdown</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- HVAC Card -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter border border-outline-variant/40 shadow-sm group hover:shadow-md transition-shadow cursor-default flex flex-col justify-between h-[180px]">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">ac_unit</span>
+</div>
+<span class="font-stat-lg text-stat-lg text-on-surface">58<span class="text-xl">%</span></span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest mb-unit">HVAC</h4>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 58%"></div>
+</div>
+<p class="font-body-base text-body-base text-on-surface-variant text-sm mt-unit">82.3 kWh</p>
+</div>
+</div>
+<!-- Lighting Card -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter border border-outline-variant/40 shadow-sm group hover:shadow-md transition-shadow cursor-default flex flex-col justify-between h-[180px]">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">wb_incandescent</span>
+</div>
+<span class="font-stat-lg text-stat-lg text-on-surface">24<span class="text-xl">%</span></span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest mb-unit">Lighting</h4>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 24%"></div>
+</div>
+<p class="font-body-base text-body-base text-on-surface-variant text-sm mt-unit">34.1 kWh</p>
+</div>
+</div>
+<!-- Appliances Card -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter border border-outline-variant/40 shadow-sm group hover:shadow-md transition-shadow cursor-default flex flex-col justify-between h-[180px]">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">kitchen</span>
+</div>
+<span class="font-stat-lg text-stat-lg text-on-surface">18<span class="text-xl">%</span></span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest mb-unit">Appliances</h4>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 18%"></div>
+</div>
+<p class="font-body-base text-body-base text-on-surface-variant text-sm mt-unit">25.6 kWh</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Savings Tip -->
+<section class="bg-gradient-to-r from-surface-container-low to-surface rounded-xl p-gutter border border-primary/20 flex flex-col md:flex-row items-start md:items-center gap-gutter shadow-sm relative overflow-hidden">
+<!-- Decorative blur -->
+<div class="absolute -left-12 -bottom-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 relative z-10 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-[24px]">tips_and_updates</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-label-caps text-label-caps text-on-surface mb-unit">Savings Opportunity</h4>
+<p class="font-body-base text-body-base text-on-surface-variant">Adjusting your thermostat schedule during mid-day hours (1PM - 4PM) could reduce your HVAC consumption by an estimated 8% this week without compromising comfort.</p>
+</div>
+<button class="ml-auto mt-stack-md md:mt-0 shrink-0 font-label-caps text-label-caps px-6 py-3 rounded-full bg-surface-container-lowest border border-outline-variant/50 hover:bg-surface-container transition-colors text-on-surface z-10">
+                Apply Schedule
+            </button>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-6 pt-3 bg-white/80 dark:bg-stone-950/80 backdrop-blur-2xl border-t border-stone-200/30 dark:border-stone-800/30 shadow-[0_-10px_40px_rgba(184,115,51,0.04)]">
+<!-- Active Tab: Dashboard (using Energy context) -->
+<a class="flex flex-col items-center justify-center text-[#B87333] scale-110 transition-transform hover:text-stone-900 dark:hover:text-stone-200 active:scale-90 duration-200 gap-1 group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform" data-weight="fill" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-tighter font-semibold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 active:scale-90 transition-transform duration-200 gap-1 group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">wb_incandescent</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-tighter font-semibold">Devices</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 active:scale-90 transition-transform duration-200 gap-1 group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">thermostat</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-tighter font-semibold">Climate</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 active:scale-90 transition-transform duration-200 gap-1 group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">shield</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-tighter font-semibold">Security</span>
+</a>
+</nav>
+</body></html>

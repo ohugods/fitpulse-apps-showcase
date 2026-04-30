@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Serene - Meditation Library</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#e1e3e2",
+                        "on-secondary-fixed-variant": "#404850",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#002118",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#404945",
+                        "on-background": "#191c1c",
+                        "tertiary": "#6b5b53",
+                        "secondary-fixed": "#dbe3ed",
+                        "surface-container": "#eceeed",
+                        "surface-bright": "#f8faf9",
+                        "surface-variant": "#e1e3e2",
+                        "surface-tint": "#3a6758",
+                        "tertiary-fixed-dim": "#d7c2b9",
+                        "surface-container-high": "#e6e9e8",
+                        "secondary-container": "#dbe3ed",
+                        "on-secondary-container": "#5d656e",
+                        "primary": "#3a6758",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#63544c",
+                        "on-tertiary-fixed": "#241913",
+                        "on-primary-container": "#325f51",
+                        "on-tertiary-fixed-variant": "#52443d",
+                        "on-error-container": "#93000a",
+                        "outline": "#717975",
+                        "surface-container-low": "#f2f4f3",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d8dada",
+                        "inverse-primary": "#a1d1bf",
+                        "background": "#f8faf9",
+                        "primary-container": "#a7d7c5",
+                        "outline-variant": "#c0c8c3",
+                        "on-surface": "#191c1c",
+                        "tertiary-container": "#dec9bf",
+                        "surface": "#f8faf9",
+                        "on-secondary-fixed": "#141c23",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#bfc7d1",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3131",
+                        "on-primary-fixed-variant": "#214f41",
+                        "secondary": "#575f68",
+                        "inverse-on-surface": "#eff1f0",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#bcedda",
+                        "primary-fixed-dim": "#a1d1bf",
+                        "tertiary-fixed": "#f4ded4"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.25rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "20px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    fontFamily: {
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "h2": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h1": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for clean minimal look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Custom subtle shadow using primary tint */
+        .shadow-soft-ambient {
+            box-shadow: 0 12px 40px rgba(58, 103, 88, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md antialiased flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md w-full top-0 sticky border-none shadow-[0_4px_20px_rgba(167,215,197,0.1)] dark:shadow-none flex justify-between items-center px-6 py-4 z-50">
+<!-- Leading: Avatar -->
+<button aria-label="User Profile" class="active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity w-10 h-10 rounded-full overflow-hidden border border-surface-variant flex-shrink-0">
+<img alt="User profile photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkDrXdMzTUwCymspiYImxeWbpOv3wtcmXPSAaIvJ1znAgXMZ4qMrDkaRXt4dkJ6n7XnrpU-PvtALTfjrtLTGO4q8O1ULqFmW5LG_SHtQSiqQFMbHamS4HT-m3AvCG-iRO1KSUMxoGV7buzRV-hijHbsuG6uS4Mwg7qxrERwLdbkh_R_P7rndCBxtjKZ5EHageD2od-Bf8WkNRVew2XfgUld_uTrfdvdqW5qpRrjk329si021G17RmXGKY6xznqqLFjOHRNg6q4bLLP"/>
+</button>
+<!-- Desktop Navigation Cluster (Hidden on mobile) -->
+<nav class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-zinc-400 dark:text-zinc-500 group-hover:text-emerald-400 transition-colors" data-icon="home">home</span>
+</a>
+<!-- Active State: self_care -->
+<a class="flex flex-col items-center gap-1 group relative" href="#">
+<span class="material-symbols-outlined text-emerald-700 dark:text-emerald-300 icon-fill transition-colors" data-icon="self_care">self_care</span>
+<span class="absolute -bottom-2 w-1 h-1 bg-emerald-500 rounded-full"></span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-zinc-400 dark:text-zinc-500 group-hover:text-emerald-400 transition-colors" data-icon="insights">insights</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-zinc-400 dark:text-zinc-500 group-hover:text-emerald-400 transition-colors" data-icon="person">person</span>
+</a>
+</nav>
+<!-- Headline: Brand -->
+<div class="text-2xl font-semibold tracking-tight text-emerald-700 dark:text-emerald-300 font-['Plus_Jakarta_Sans'] md:hidden">
+            Serene
+        </div>
+<!-- Trailing: Icon -->
+<button aria-label="Settings" class="active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity text-emerald-600 dark:text-emerald-400 flex items-center justify-center p-2 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="settings">settings</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop pt-lg pb-32 md:pb-xl flex flex-col gap-lg">
+<!-- Page Header & Filtering -->
+<section class="flex flex-col gap-md">
+<div class="flex flex-col gap-xs">
+<h1 class="font-h1 text-h1 text-on-surface">Find your center</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Guided sessions for whatever you need today.</p>
+</div>
+<!-- Categories Chips -->
+<div class="flex gap-sm overflow-x-auto no-scrollbar pb-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 mt-4">
+<button class="whitespace-nowrap px-6 py-3 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md transition-all active:scale-95">
+                    All Sessions
+                </button>
+<button class="whitespace-nowrap px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md transition-all active:scale-95">
+                    Sleep
+                </button>
+<button class="whitespace-nowrap px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md transition-all active:scale-95">
+                    Stress Relief
+                </button>
+<button class="whitespace-nowrap px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md transition-all active:scale-95">
+                    Deep Focus
+                </button>
+</div>
+</section>
+<!-- Library Grid (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter lg:gap-8">
+<!-- Featured Large Card (Spans 2 columns on desktop) -->
+<article class="md:col-span-2 group relative overflow-hidden rounded-[2rem] bg-surface-container-lowest shadow-soft-ambient cursor-pointer active:scale-[0.98] transition-transform duration-300">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sweeping, soft-focus landscape of mist rolling over gentle green hills at dawn. The scene is bathed in cool, pale mint and soft blue pastel morning light, establishing a profoundly serene and calming mood. The minimal composition utilizes vast areas of soft sky, embodying a supportive, bright light-mode aesthetic perfect for a relaxing meditation interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdnMTCLgDWEfjgbQ-I3Qu6TVvnSqU1y89lCEc30z_1lN0ClJNVbhKD0m--3xJ7mvNUo0T5fGuqcBie33_E-oruki0jkB0NMzIcfXZMA2LE2JMkZAV2B61__n2JLFJu-DwX7BX6_oW0GACkO0ZKrEPy3Xk1mp_nTEF5GQTCHhEuqY2tdPA3w5uIH6L4wDjsUS0U_-fmZ5S54rhFATMrNAr_Mdx1bu92HCNJ79qoZO7paooec1zgltTellsF-spijJkFrBNeHp6PbgBW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+</div>
+<div class="relative z-10 p-md lg:p-10 h-full min-h-[320px] flex flex-col justify-end gap-sm">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-3 py-1 bg-white/60 backdrop-blur-md rounded-full font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Featured</span>
+<div class="flex items-center gap-1 px-3 py-1 bg-white/60 backdrop-blur-md rounded-full text-on-surface">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm text-label-sm">20 MIN</span>
+</div>
+</div>
+<h2 class="font-h2 text-h2 text-on-surface max-w-md">Morning Clarity &amp; Intention</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-1">Start your day with a clear mind and a calm heart. Gentle breathing exercises to set a positive tone.</p>
+<button class="absolute right-md bottom-md lg:right-10 lg:bottom-10 w-14 h-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg group-hover:bg-primary-fixed group-hover:text-on-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-3xl ml-1" data-icon="play_arrow" data-weight="fill">play_arrow</span>
+</button>
+</div>
+</article>
+<!-- Standard Card 1: Sleep -->
+<article class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-soft-ambient cursor-pointer flex flex-col active:scale-[0.98] transition-transform duration-300">
+<div class="h-48 overflow-hidden relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A softly blurred close-up of a neat, unmade bed with light pastel green and crisp white linen in a quiet, sunlit room. The morning light filters gently through sheer curtains, creating a warm, comforting atmosphere. The mood is incredibly tranquil and restorative. The visual style embodies minimalism and soft tonalism with a bright, high-key aesthetic and plenty of negative space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3YNuGXPBKhHap_tboRHghFEjZwvQEX6C46_QnmBGHcsbs_CJ86ZuuKr8pdxzwkgjJpQ2nMGACMEGtp4HpNtk3SpI3BPrW4dR9GfW0yWOuZukEogYGaW3yissCiDscQDPYaHaIDScEiL5XUOHYcjElhCobGZFR_-qRyt1Dk3joeVZ0jrHpU--1ySqoyIDCgrcDlncJy6Qm28X34jbLj0PiD6r-A2eoEi5P8_oGBpmkU5PXx8oeEmsh1d7Qz3nUFnEoFnRywun8NzL_"/>
+<div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="p-md flex flex-col gap-xs flex-1 bg-white">
+<div class="flex items-center gap-2 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="bedtime">bedtime</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Sleep • 45 MIN</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Deep Restorative Sleep</h3>
+<p class="font-body-md text-body-md text-outline line-clamp-2 mt-1">Drift off naturally with soothing body scans and calming ambient sounds.</p>
+</div>
+</article>
+<!-- Standard Card 2: Stress -->
+<article class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-soft-ambient cursor-pointer flex flex-col active:scale-[0.98] transition-transform duration-300">
+<div class="h-48 overflow-hidden relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A gentle, soft-focus view of rippling water reflecting pale mint green and soft grey hues under a bright, overcast sky. The organic transitions of light and subtle ripples create an immediate sense of relief and deep breathing. The visual style is rooted in soft tonalism and modern minimalism, receding into the background to provide a peaceful sanctuary entirely free of visual clutter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp2eIw5__llfTc2sY6LVpH9Sm8So4MZ3lYsHt39A-vITyPdiU5gtLAZHGgEIuELB1tmOiaA0H_MVjc4ySvyye6kf-jFYIj8VAFVGH49TdtKg9X1uJSuq0Q9PoGFhEnNqmjvT-GjSCRmK1b1AtML5CFnMIJ_6sBDgvLZaRMIdcNjQI2XzBuKE00pBMWAKWtlHrliHWAHZhliXaMlTzlvCeqgydk70pzB07hxsTb4BvNZZFSx_a7xutuJV_e-vAkvSB2NI8nbjHpXEUO"/>
+</div>
+<div class="p-md flex flex-col gap-xs flex-1 bg-white">
+<div class="flex items-center gap-2 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="air">air</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Stress • 10 MIN</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Emergency Calm</h3>
+<p class="font-body-md text-body-md text-outline line-clamp-2 mt-1">A quick, grounding exercise to lower your heart rate and find immediate relief.</p>
+</div>
+</article>
+<!-- Standard Card 3: Focus -->
+<article class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-soft-ambient cursor-pointer flex flex-col active:scale-[0.98] transition-transform duration-300">
+<div class="h-48 overflow-hidden relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene still life featuring a beautifully textured ceramic bowl and a single green matcha whisk on a clean, light surface. Soft, diffused lighting eliminates harsh shadows, fostering a sense of clarity and mental focus. The composition is highly minimalist, utilizing extreme whitespace and a restricted palette of breathy pastels. It evokes a feeling of calm concentration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrdwoOrTyxE_vhctjrZzwzT-MTc7TvWoaGwIRxvQix4qFgKJ6bJhBkmLLm7D3r-_31hfUexh82n1ariCwAurjGDV1NW73_Mjl4mqaEXJUD0iQeOtBEB6VZDZIHOoZbXIy4QdFROs7OlZJKGgFAjAJFeQ0DmqKQf3HY5zj6flQfSJVQoISR3o2QUKUttz2shhUkemr4gowTUNBwNhRqXcwCr6zVtb3gdmkrx-5EDcuMmAdi_dwjK80-KPt3BaNyDU_WpPYQhYyt_FL_"/>
+</div>
+<div class="p-md flex flex-col gap-xs flex-1 bg-white">
+<div class="flex items-center gap-2 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="center_focus_strong">center_focus_strong</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Focus • 15 MIN</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Flow State Activation</h3>
+<p class="font-body-md text-body-md text-outline line-clamp-2 mt-1">Clear distractions and prime your mind for deep, uninterrupted work.</p>
+</div>
+</article>
+<!-- Standard Card 4: Daily -->
+<article class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-soft-ambient cursor-pointer flex flex-col active:scale-[0.98] transition-transform duration-300">
+<div class="h-48 overflow-hidden relative bg-surface-variant flex items-center justify-center">
+<!-- Example using subtle CSS gradient background instead of image for variety in grid -->
+<div class="absolute inset-0 bg-gradient-to-br from-[#f0fdf4] to-[#dcfce7] opacity-80" data-alt="A soft, abstract gradient background smoothly transitioning from very pale mint green to a slightly warmer off-white cream color. The texture is completely smooth and grain-free, designed to act as a pure, minimalist visual canvas. The lighting is ambient and diffuse, creating an atmosphere of gentle support and quiet emptiness that perfectly embodies soft tonalism."></div>
+<span class="material-symbols-outlined text-6xl text-primary/30 relative z-10" data-icon="spa">spa</span>
+</div>
+<div class="p-md flex flex-col gap-xs flex-1 bg-white">
+<div class="flex items-center gap-2 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="sunny">sunny</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Daily • 5 MIN</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Mid-day Reset</h3>
+<p class="font-body-md text-body-md text-outline line-clamp-2 mt-1">Five minutes of mindfulness to break the tension of a busy afternoon.</p>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-white dark:bg-zinc-900 fixed bottom-0 w-full h-20 rounded-t-[32px] border-t border-emerald-50/50 dark:border-zinc-800 shadow-[0_-8px_30px_rgba(167,215,197,0.15)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-safe">
+<!-- Inactive: Home -->
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 hover:text-emerald-400 dark:hover:text-emerald-300 active:scale-90 transition-all duration-300 ease-out group">
+<span class="material-symbols-outlined text-2xl mb-1 transition-colors" data-icon="home">home</span>
+</button>
+<!-- Active: self_care (Library intent matches best) -->
+<button class="flex flex-col items-center justify-center relative after:content-[''] after:absolute after:-bottom-2 after:w-1 after:h-1 after:bg-emerald-500 after:rounded-full text-emerald-500 dark:text-emerald-400 hover:text-emerald-400 dark:hover:text-emerald-300 active:scale-90 transition-all duration-300 ease-out group">
+<span class="material-symbols-outlined text-2xl mb-1 icon-fill transition-colors" data-icon="self_care" data-weight="fill">self_care</span>
+</button>
+<!-- Inactive: Insights -->
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 hover:text-emerald-400 dark:hover:text-emerald-300 active:scale-90 transition-all duration-300 ease-out group">
+<span class="material-symbols-outlined text-2xl mb-1 transition-colors" data-icon="insights">insights</span>
+</button>
+<!-- Inactive: Person -->
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 hover:text-emerald-400 dark:hover:text-emerald-300 active:scale-90 transition-all duration-300 ease-out group">
+<span class="material-symbols-outlined text-2xl mb-1 transition-colors" data-icon="person">person</span>
+</button>
+</nav>
+</body></html>
